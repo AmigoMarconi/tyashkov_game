@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qoau3i15dnyb"
+path="res://.godot/imported/Битва за сортир.mp3-4c4ab97aaf962c9dcdd5476963b18c04.mp3str"
+
+[deps]
+
+source_file="res://sounds/Битва за сортир.mp3"
+dest_files=["res://.godot/imported/Битва за сортир.mp3-4c4ab97aaf962c9dcdd5476963b18c04.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

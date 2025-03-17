@@ -1,0 +1,134 @@
+[gd_scene load_steps=9 format=3 uid="uid://baybf462s0v4j"]
+
+[ext_resource type="FontFile" uid="uid://d0jfh7mj4whuv" path="res://assets/alagard-12px-unicode.ttf" id="1_ijpji"]
+[ext_resource type="Script" uid="uid://63cjdpoq6bk7" path="res://scripts/back_button.gd" id="2_hm4m4"]
+[ext_resource type="PackedScene" uid="uid://ch3jfe1ssj3ob" path="res://scenes/back_ground.tscn" id="3_hm4m4"]
+[ext_resource type="AudioStream" uid="uid://qoau3i15dnyb" path="res://sounds/Битва за сортир.mp3" id="4_lfjc7"]
+[ext_resource type="Script" uid="uid://c3e4nyu817wtg" path="res://scripts/audio_stream_player_2d.gd" id="5_3xsyx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t1lix"]
+bg_color = Color(0.834614, 0.834614, 0.834614, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4gmlt"]
+bg_color = Color(0.509286, 0.509286, 0.509286, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbr8e"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -48.0
+offset_right = 250.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Volume_Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ijpji")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_t1lix")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4gmlt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lbr8e")
+text = "Звук"
+
+[node name="Diff_Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ijpji")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_t1lix")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4gmlt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lbr8e")
+text = "Сложность"
+
+[node name="Back_Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ijpji")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_t1lix")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4gmlt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lbr8e")
+text = "Назад"
+script = ExtResource("2_hm4m4")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -320.0
+offset_right = 256.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -15
+theme_override_constants/shadow_offset_y = 13
+theme_override_fonts/font = ExtResource("1_ijpji")
+theme_override_font_sizes/font_size = 55
+text = "Тяжков 
+и 
+формула времени"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackGround" parent="." instance=ExtResource("3_hm4m4")]
+visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_lfjc7")
+script = ExtResource("5_3xsyx")
+
+[connection signal="pressed" from="VBoxContainer/Back_Button" to="VBoxContainer/Back_Button" method="_on_pressed"]
