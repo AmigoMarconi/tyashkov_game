@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://b2wpybdh1ferk"]
+[gd_scene load_steps=20 format=3 uid="uid://b2wpybdh1ferk"]
 
 [ext_resource type="Script" uid="uid://bp7bfefpeu0jr" path="res://scripts/menu.gd" id="1_con2f"]
 [ext_resource type="FontFile" uid="uid://d0jfh7mj4whuv" path="res://assets/alagard-12px-unicode.ttf" id="2_mhnvy"]
 [ext_resource type="PackedScene" uid="uid://ch3jfe1ssj3ob" path="res://scenes/back_ground.tscn" id="3_4ytvr"]
+[ext_resource type="Script" uid="uid://bhog1fu2i8why" path="res://scripts/audio_stream_player_2d.gd" id="4_mhnvy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lti8b"]
 modulate_color = Color(0.423651, 0.423651, 0.423651, 1)
@@ -350,19 +351,25 @@ size_flags_vertical = 6
 theme_override_font_sizes/font_size = 20
 text = "Звуковые эффекты"
 
-[node name="slider" type="VBoxContainer" parent="Audio/HBoxContainer"]
+[node name="MusicVolumeSlider" type="VBoxContainer" parent="Audio/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Master" type="HSlider" parent="Audio/HBoxContainer/slider"]
+[node name="Master" type="HSlider" parent="Audio/HBoxContainer/MusicVolumeSlider"]
 layout_mode = 2
 size_flags_vertical = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
 
-[node name="Music" type="HSlider" parent="Audio/HBoxContainer/slider"]
+[node name="Music" type="HSlider" parent="Audio/HBoxContainer/MusicVolumeSlider"]
 layout_mode = 2
 size_flags_vertical = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
 
-[node name="SoundFX" type="HSlider" parent="Audio/HBoxContainer/slider"]
+[node name="SoundFX" type="HSlider" parent="Audio/HBoxContainer/MusicVolumeSlider"]
 layout_mode = 2
 size_flags_vertical = 2
 
@@ -385,13 +392,17 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
 text = "Назад"
 
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+bus = &"Music"
+script = ExtResource("4_mhnvy")
+
 [connection signal="pressed" from="Menu/Continue_Button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Menu/Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Menu/Options_Button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Menu/Exit_Button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Options_menu/VBoxContainer2/Volume_Button" to="." method="_on_volume_button_pressed"]
 [connection signal="pressed" from="Options_menu/Back_Button" to="." method="_on_back_button_pressed"]
-[connection signal="value_changed" from="Audio/HBoxContainer/slider/Master" to="." method="_on_master_value_changed"]
-[connection signal="value_changed" from="Audio/HBoxContainer/slider/Music" to="." method="_on_music_value_changed"]
-[connection signal="value_changed" from="Audio/HBoxContainer/slider/SoundFX" to="." method="_on_sound_fx_value_changed"]
+[connection signal="value_changed" from="Audio/HBoxContainer/MusicVolumeSlider/Master" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="Audio/HBoxContainer/MusicVolumeSlider/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="Audio/HBoxContainer/MusicVolumeSlider/SoundFX" to="." method="_on_sound_fx_value_changed"]
 [connection signal="pressed" from="Audio/Back_option_Button" to="." method="_on_back_option_button_pressed"]
