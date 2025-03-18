@@ -1,6 +1,6 @@
 class_name Tishkov extends CharacterBody2D
 
-var SPEED : float = 12000.0
+var SPEED : float = 1000.0
 
 func _ready() -> void:
 	pass

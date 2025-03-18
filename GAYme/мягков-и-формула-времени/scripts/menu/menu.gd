@@ -15,7 +15,7 @@ func toggle():
 
 func _on_start_button_pressed() -> void:
 	toggle()
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	get_tree().change_scene_to_file("res://tile_map_layer.tscn")
 
 
 func _on_options_button_pressed() -> void:

@@ -393,7 +393,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
 text = "Назад"
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
-bus = &"Music"
 script = ExtResource("4_3y2rt")
 
 [connection signal="pressed" from="Menu/Continue_Button" to="." method="_on_exit_button_pressed"]
