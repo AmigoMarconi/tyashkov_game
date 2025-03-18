@@ -1,9 +1,9 @@
 [gd_scene load_steps=20 format=3 uid="uid://b2wpybdh1ferk"]
 
-[ext_resource type="Script" uid="uid://bp7bfefpeu0jr" path="res://scripts/menu.gd" id="1_con2f"]
-[ext_resource type="FontFile" uid="uid://d0jfh7mj4whuv" path="res://assets/alagard-12px-unicode.ttf" id="2_mhnvy"]
-[ext_resource type="PackedScene" uid="uid://ch3jfe1ssj3ob" path="res://scenes/back_ground.tscn" id="3_4ytvr"]
-[ext_resource type="Script" uid="uid://bhog1fu2i8why" path="res://scripts/audio_stream_player_2d.gd" id="4_mhnvy"]
+[ext_resource type="Script" uid="uid://bp7bfefpeu0jr" path="res://scripts/menu/menu.gd" id="1_037ec"]
+[ext_resource type="FontFile" uid="uid://d0jfh7mj4whuv" path="res://assets/alagard-12px-unicode.ttf" id="2_y1o0p"]
+[ext_resource type="PackedScene" uid="uid://ch3jfe1ssj3ob" path="res://scenes/menu/back_ground.tscn" id="3_r8yej"]
+[ext_resource type="Script" uid="uid://bhog1fu2i8why" path="res://scripts/audio_stream_player_2d.gd" id="4_3y2rt"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lti8b"]
 modulate_color = Color(0.423651, 0.423651, 0.423651, 1)
@@ -116,7 +116,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_con2f")
+script = ExtResource("1_037ec")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -152,7 +152,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_mhnvy")
+theme_override_fonts/font = ExtResource("2_y1o0p")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ouk20")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_con2f")
@@ -169,7 +169,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_mhnvy")
+theme_override_fonts/font = ExtResource("2_y1o0p")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ouk20")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mae5d")
@@ -184,7 +184,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_mhnvy")
+theme_override_fonts/font = ExtResource("2_y1o0p")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ouk20")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mae5d")
@@ -199,7 +199,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_mhnvy")
+theme_override_fonts/font = ExtResource("2_y1o0p")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ouk20")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mae5d")
@@ -223,7 +223,7 @@ grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = -15
 theme_override_constants/shadow_offset_y = 13
-theme_override_fonts/font = ExtResource("2_mhnvy")
+theme_override_fonts/font = ExtResource("2_y1o0p")
 theme_override_font_sizes/font_size = 55
 text = "Тяжков 
 и 
@@ -231,7 +231,7 @@ text = "Тяжков
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BackGround" parent="." instance=ExtResource("3_4ytvr")]
+[node name="BackGround" parent="." instance=ExtResource("3_r8yej")]
 
 [node name="Options_menu" type="Control" parent="."]
 visible = false
@@ -263,7 +263,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_mhnvy")
+theme_override_fonts/font = ExtResource("2_y1o0p")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4ytvr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
@@ -278,7 +278,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_mhnvy")
+theme_override_fonts/font = ExtResource("2_y1o0p")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_i6lef")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
@@ -297,7 +297,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_mhnvy")
+theme_override_fonts/font = ExtResource("2_y1o0p")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_70i5f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
@@ -384,7 +384,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_mhnvy")
+theme_override_fonts/font = ExtResource("2_y1o0p")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_70i5f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
@@ -394,7 +394,7 @@ text = "Назад"
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 bus = &"Music"
-script = ExtResource("4_mhnvy")
+script = ExtResource("4_3y2rt")
 
 [connection signal="pressed" from="Menu/Continue_Button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Menu/Start_Button" to="." method="_on_start_button_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://34758hxq4qtn"]
 
-[ext_resource type="Script" uid="uid://bp7bfefpeu0jr" path="res://scripts/menu.gd" id="1_lnu2h"]
-[ext_resource type="FontFile" uid="uid://d0jfh7mj4whuv" path="res://assets/alagard-12px-unicode.ttf" id="2_lbhrr"]
+[ext_resource type="Script" uid="uid://bp7bfefpeu0jr" path="res://scripts/menu/menu.gd" id="1_yqjtg"]
+[ext_resource type="FontFile" uid="uid://d0jfh7mj4whuv" path="res://assets/alagard-12px-unicode.ttf" id="2_lnu2h"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lti8b"]
 modulate_color = Color(0.423651, 0.423651, 0.423651, 1)
@@ -79,9 +79,9 @@ shadow_size = 5
 
 [node name="Game" type="Node2D"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Pause panel" type="CanvasLayer" parent="."]
 
-[node name="Menu" type="Control" parent="CanvasLayer"]
+[node name="Menu" type="Control" parent="Pause panel"]
 process_mode = 3
 visible = false
 layout_mode = 3
@@ -92,9 +92,9 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_lnu2h")
+script = ExtResource("1_yqjtg")
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Menu"]
+[node name="Panel" type="Panel" parent="Pause panel/Menu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -105,7 +105,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_lti8b")
 
-[node name="Menu" type="VBoxContainer" parent="CanvasLayer/Menu"]
+[node name="Menu" type="VBoxContainer" parent="Pause panel/Menu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -120,7 +120,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = -23
 
-[node name="Continue_Button" type="Button" parent="CanvasLayer/Menu/Menu"]
+[node name="Continue_Button" type="Button" parent="Pause panel/Menu/Menu"]
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_colors/font_disabled_color = Color(0.129558, 0.129559, 0.129558, 1)
@@ -128,7 +128,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_lbhrr")
+theme_override_fonts/font = ExtResource("2_lnu2h")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ouk20")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_con2f")
@@ -137,14 +137,14 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_4hy44")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lti8b")
 text = "Продолжить"
 
-[node name="Options_Button" type="Button" parent="CanvasLayer/Menu/Menu"]
+[node name="Options_Button" type="Button" parent="Pause panel/Menu/Menu"]
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_lbhrr")
+theme_override_fonts/font = ExtResource("2_lnu2h")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ouk20")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mae5d")
@@ -152,14 +152,14 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_4hy44")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lti8b")
 text = "Настройки"
 
-[node name="Exit_Button" type="Button" parent="CanvasLayer/Menu/Menu"]
+[node name="Exit_Button" type="Button" parent="Pause panel/Menu/Menu"]
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_lbhrr")
+theme_override_fonts/font = ExtResource("2_lnu2h")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ouk20")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mae5d")
@@ -167,7 +167,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_4hy44")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lti8b")
 text = "Выход"
 
-[node name="Label" type="Label" parent="CanvasLayer/Menu"]
+[node name="Label" type="Label" parent="Pause panel/Menu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -183,7 +183,7 @@ grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = -15
 theme_override_constants/shadow_offset_y = 13
-theme_override_fonts/font = ExtResource("2_lbhrr")
+theme_override_fonts/font = ExtResource("2_lnu2h")
 theme_override_font_sizes/font_size = 55
 text = "Тяжков 
 и 
@@ -191,7 +191,7 @@ text = "Тяжков
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Options_menu" type="Control" parent="CanvasLayer/Menu"]
+[node name="Options_menu" type="Control" parent="Pause panel/Menu"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -200,7 +200,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Menu/Options_menu"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Pause panel/Menu/Options_menu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -214,14 +214,14 @@ offset_bottom = 132.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Volume_Button" type="Button" parent="CanvasLayer/Menu/Options_menu/VBoxContainer2"]
+[node name="Volume_Button" type="Button" parent="Pause panel/Menu/Options_menu/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_lbhrr")
+theme_override_fonts/font = ExtResource("2_lnu2h")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4ytvr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
@@ -229,14 +229,14 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
 text = "Звук"
 
-[node name="Diff_Button2" type="Button" parent="CanvasLayer/Menu/Options_menu/VBoxContainer2"]
+[node name="Diff_Button2" type="Button" parent="Pause panel/Menu/Options_menu/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_lbhrr")
+theme_override_fonts/font = ExtResource("2_lnu2h")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_i6lef")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
@@ -244,7 +244,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
 text = "Сложность"
 
-[node name="Back_Button" type="Button" parent="CanvasLayer/Menu/Options_menu"]
+[node name="Back_Button" type="Button" parent="Pause panel/Menu/Options_menu"]
 layout_mode = 2
 offset_left = -48.0
 offset_top = 160.0
@@ -255,7 +255,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_lbhrr")
+theme_override_fonts/font = ExtResource("2_lnu2h")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_70i5f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
@@ -263,7 +263,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
 text = "Назад"
 
-[node name="Audio" type="Control" parent="CanvasLayer/Menu"]
+[node name="Audio" type="Control" parent="Pause panel/Menu"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -272,7 +272,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Menu/Audio"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Pause panel/Menu/Audio"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -286,41 +286,41 @@ offset_bottom = 38.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="labels" type="VBoxContainer" parent="CanvasLayer/Menu/Audio/HBoxContainer"]
+[node name="labels" type="VBoxContainer" parent="Pause panel/Menu/Audio/HBoxContainer"]
 layout_mode = 2
 
-[node name="Master" type="Label" parent="CanvasLayer/Menu/Audio/HBoxContainer/labels"]
+[node name="Master" type="Label" parent="Pause panel/Menu/Audio/HBoxContainer/labels"]
 layout_mode = 2
 size_flags_vertical = 6
 text = "Звук"
 
-[node name="Music" type="Label" parent="CanvasLayer/Menu/Audio/HBoxContainer/labels"]
+[node name="Music" type="Label" parent="Pause panel/Menu/Audio/HBoxContainer/labels"]
 layout_mode = 2
 size_flags_vertical = 6
 text = "Музыка"
 
-[node name="SoundFX" type="Label" parent="CanvasLayer/Menu/Audio/HBoxContainer/labels"]
+[node name="SoundFX" type="Label" parent="Pause panel/Menu/Audio/HBoxContainer/labels"]
 layout_mode = 2
 size_flags_vertical = 6
 text = "Звуковые эффекты"
 
-[node name="slider" type="VBoxContainer" parent="CanvasLayer/Menu/Audio/HBoxContainer"]
+[node name="slider" type="VBoxContainer" parent="Pause panel/Menu/Audio/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Master" type="HSlider" parent="CanvasLayer/Menu/Audio/HBoxContainer/slider"]
+[node name="Master" type="HSlider" parent="Pause panel/Menu/Audio/HBoxContainer/slider"]
 layout_mode = 2
 size_flags_vertical = 2
 
-[node name="Music" type="HSlider" parent="CanvasLayer/Menu/Audio/HBoxContainer/slider"]
+[node name="Music" type="HSlider" parent="Pause panel/Menu/Audio/HBoxContainer/slider"]
 layout_mode = 2
 size_flags_vertical = 2
 
-[node name="SoundFX" type="HSlider" parent="CanvasLayer/Menu/Audio/HBoxContainer/slider"]
+[node name="SoundFX" type="HSlider" parent="Pause panel/Menu/Audio/HBoxContainer/slider"]
 layout_mode = 2
 size_flags_vertical = 2
 
-[node name="Back_option_Button" type="Button" parent="CanvasLayer/Menu/Audio"]
+[node name="Back_option_Button" type="Button" parent="Pause panel/Menu/Audio"]
 layout_mode = 0
 offset_left = -48.0
 offset_top = 78.0
@@ -331,7 +331,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_lbhrr")
+theme_override_fonts/font = ExtResource("2_lnu2h")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_70i5f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
@@ -339,12 +339,12 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
 text = "Назад"
 
-[connection signal="pressed" from="CanvasLayer/Menu/Menu/Continue_Button" to="CanvasLayer/Menu" method="_on_exit_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Menu/Menu/Options_Button" to="CanvasLayer/Menu" method="_on_options_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Menu/Menu/Exit_Button" to="CanvasLayer/Menu" method="_on_exit_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Menu/Options_menu/VBoxContainer2/Volume_Button" to="CanvasLayer/Menu" method="_on_volume_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Menu/Options_menu/Back_Button" to="CanvasLayer/Menu" method="_on_back_button_pressed"]
-[connection signal="value_changed" from="CanvasLayer/Menu/Audio/HBoxContainer/slider/Master" to="CanvasLayer/Menu" method="_on_master_value_changed"]
-[connection signal="value_changed" from="CanvasLayer/Menu/Audio/HBoxContainer/slider/Music" to="CanvasLayer/Menu" method="_on_music_value_changed"]
-[connection signal="value_changed" from="CanvasLayer/Menu/Audio/HBoxContainer/slider/SoundFX" to="CanvasLayer/Menu" method="_on_sound_fx_value_changed"]
-[connection signal="pressed" from="CanvasLayer/Menu/Audio/Back_option_Button" to="CanvasLayer/Menu" method="_on_back_option_button_pressed"]
+[connection signal="pressed" from="Pause panel/Menu/Menu/Continue_Button" to="Pause panel/Menu" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Pause panel/Menu/Menu/Options_Button" to="Pause panel/Menu" method="_on_options_button_pressed"]
+[connection signal="pressed" from="Pause panel/Menu/Menu/Exit_Button" to="Pause panel/Menu" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Pause panel/Menu/Options_menu/VBoxContainer2/Volume_Button" to="Pause panel/Menu" method="_on_volume_button_pressed"]
+[connection signal="pressed" from="Pause panel/Menu/Options_menu/Back_Button" to="Pause panel/Menu" method="_on_back_button_pressed"]
+[connection signal="value_changed" from="Pause panel/Menu/Audio/HBoxContainer/slider/Master" to="Pause panel/Menu" method="_on_master_value_changed"]
+[connection signal="value_changed" from="Pause panel/Menu/Audio/HBoxContainer/slider/Music" to="Pause panel/Menu" method="_on_music_value_changed"]
+[connection signal="value_changed" from="Pause panel/Menu/Audio/HBoxContainer/slider/SoundFX" to="Pause panel/Menu" method="_on_sound_fx_value_changed"]
+[connection signal="pressed" from="Pause panel/Menu/Audio/Back_option_Button" to="Pause panel/Menu" method="_on_back_option_button_pressed"]

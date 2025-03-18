@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3womgd2wrjfc"]
+
+[ext_resource type="Texture2D" uid="uid://yoqp18qo0wgc" path="res://player/Sprite/photo_2025-03-15_12-46-07-Photoroom.png" id="1_cjyu3"]
+[ext_resource type="Script" uid="uid://canuw08ebrojg" path="res://player/scripts/tishkov.gd" id="1_f7arj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f7arj"]
+radius = 34.0
+height = 106.0
+
+[node name="Tishkov" type="CharacterBody2D"]
+texture_filter = 2
+collision_mask = 16
+script = ExtResource("1_f7arj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -40)
+shape = SubResource("CapsuleShape2D_f7arj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(3, -46)
+scale = Vector2(0.0972222, 0.0793522)
+texture = ExtResource("1_cjyu3")
