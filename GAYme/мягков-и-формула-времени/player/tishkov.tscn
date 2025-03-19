@@ -3,9 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://yoqp18qo0wgc" path="res://player/Sprite/photo_2025-03-15_12-46-07-Photoroom.png" id="1_cjyu3"]
 [ext_resource type="Script" uid="uid://canuw08ebrojg" path="res://player/scripts/tishkov.gd" id="1_f7arj"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f7arj"]
-radius = 28.0378
-height = 56.0755
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vp0k"]
+size = Vector2(45.4179, 15.6076)
 
 [node name="Tishkov" type="CharacterBody2D"]
 texture_filter = 2
@@ -15,9 +14,9 @@ collision_mask = 16
 script = ExtResource("1_f7arj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -31.5)
+position = Vector2(0.25, -16.8708)
 scale = Vector2(0.58347, 0.624158)
-shape = SubResource("CapsuleShape2D_f7arj")
+shape = SubResource("RectangleShape2D_1vp0k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
