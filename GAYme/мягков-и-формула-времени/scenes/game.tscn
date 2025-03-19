@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://34758hxq4qtn"]
+[gd_scene load_steps=16 format=3 uid="uid://34758hxq4qtn"]
 
 [ext_resource type="Script" uid="uid://bp7bfefpeu0jr" path="res://scripts/menu/menu.gd" id="1_yqjtg"]
 [ext_resource type="FontFile" uid="uid://d0jfh7mj4whuv" path="res://assets/alagard-12px-unicode.ttf" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://cbfi66x567prd" path="res://tile_map_layer.tscn" id="3_lnu2h"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lti8b"]
 modulate_color = Color(0.423651, 0.423651, 0.423651, 1)
@@ -338,6 +339,9 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
 text = "Назад"
+
+[node name="TileMap" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(-86.1251, -30.6274)
 
 [connection signal="pressed" from="Pause panel/Menu/Menu/Continue_Button" to="Pause panel/Menu" method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Pause panel/Menu/Menu/Options_Button" to="Pause panel/Menu" method="_on_options_button_pressed"]

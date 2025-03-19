@@ -4,22 +4,23 @@
 [ext_resource type="Script" uid="uid://canuw08ebrojg" path="res://player/scripts/tishkov.gd" id="1_f7arj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f7arj"]
-radius = 34.0
-height = 106.0
+radius = 28.0378
+height = 56.0755
 
 [node name="Tishkov" type="CharacterBody2D"]
 texture_filter = 2
 position = Vector2(0, 40)
+scale = Vector2(2, 2)
 collision_mask = 16
 script = ExtResource("1_f7arj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -40)
+position = Vector2(0.5, -31.5)
 scale = Vector2(0.58347, 0.624158)
 shape = SubResource("CapsuleShape2D_f7arj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(2, -43)
-scale = Vector2(0.0551407, 0.0500337)
+position = Vector2(1.5, -43)
+scale = Vector2(0.0557507, 0.0501181)
 texture = ExtResource("1_cjyu3")
