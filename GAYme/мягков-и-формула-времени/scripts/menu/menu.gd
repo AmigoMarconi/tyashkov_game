@@ -17,7 +17,6 @@ func _on_start_button_pressed() -> void:
 	toggle()
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
-
 func _on_options_button_pressed() -> void:
 	show_and_hide(options, menu)
 
@@ -52,3 +51,7 @@ func _on_back_option_button_pressed() -> void:
 	
 func _on_volume_button_pressed() -> void:
 	show_and_hide(audio, options)
+
+
+func _on_continue_button_pressed() -> void:
+	toggle()

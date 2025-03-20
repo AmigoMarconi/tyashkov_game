@@ -1,8 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://34758hxq4qtn"]
+[gd_scene load_steps=23 format=3 uid="uid://34758hxq4qtn"]
 
 [ext_resource type="Script" uid="uid://bp7bfefpeu0jr" path="res://scripts/menu/menu.gd" id="1_yqjtg"]
 [ext_resource type="FontFile" uid="uid://d0jfh7mj4whuv" path="res://assets/alagard-12px-unicode.ttf" id="2_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://cbfi66x567prd" path="res://tile_map_layer.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://cbfi66x567prd" path="res://scenes/tile_map_layer.tscn" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://bb4hwgr0x84d2" path="res://scenes/menu/master.gd" id="3_p57ef"]
+[ext_resource type="Script" uid="uid://bsekc1jg1is1f" path="res://scenes/menu/music.gd" id="4_u5sy4"]
+[ext_resource type="Script" uid="uid://cs2d1u6lr6dou" path="res://scenes/menu/sound_fx.gd" id="5_gee14"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lti8b"]
 modulate_color = Color(0.423651, 0.423651, 0.423651, 1)
@@ -78,13 +81,42 @@ shadow_size = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_70i5f"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0tnpc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtaks"]
+bg_color = Color(0.834614, 0.834614, 0.834614, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvpfn"]
+bg_color = Color(0.509286, 0.509286, 0.509286, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dinhu"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
 [node name="Game" type="Node2D"]
+visible = false
 
 [node name="Pause panel" type="CanvasLayer" parent="."]
 
 [node name="Menu" type="Control" parent="Pause panel"]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -107,6 +139,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_lti8b")
 
 [node name="Menu" type="VBoxContainer" parent="Pause panel/Menu"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -193,7 +226,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Options_menu" type="Control" parent="Pause panel/Menu"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -247,10 +279,10 @@ text = "Сложность"
 
 [node name="Back_Button" type="Button" parent="Pause panel/Menu/Options_menu"]
 layout_mode = 2
-offset_left = -48.0
-offset_top = 160.0
-offset_right = 40.0
-offset_bottom = 202.0
+offset_left = -250.0
+offset_top = 158.0
+offset_right = 250.0
+offset_bottom = 200.0
 size_flags_vertical = 6
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -280,46 +312,63 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -168.5
-offset_top = -38.5
-offset_right = 168.5
-offset_bottom = 38.5
+offset_left = -203.5
+offset_top = -46.0
+offset_right = 203.5
+offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 6
 
 [node name="labels" type="VBoxContainer" parent="Pause panel/Menu/Audio/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.08
 
 [node name="Master" type="Label" parent="Pause panel/Menu/Audio/HBoxContainer/labels"]
 layout_mode = 2
-size_flags_vertical = 6
+theme_override_font_sizes/font_size = 20
 text = "Звук"
 
 [node name="Music" type="Label" parent="Pause panel/Menu/Audio/HBoxContainer/labels"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_font_sizes/font_size = 20
 text = "Музыка"
 
 [node name="SoundFX" type="Label" parent="Pause panel/Menu/Audio/HBoxContainer/labels"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_font_sizes/font_size = 20
 text = "Звуковые эффекты"
 
-[node name="slider" type="VBoxContainer" parent="Pause panel/Menu/Audio/HBoxContainer"]
+[node name="MusicVolumeSlider" type="VBoxContainer" parent="Pause panel/Menu/Audio/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Master" type="HSlider" parent="Pause panel/Menu/Audio/HBoxContainer/slider"]
+[node name="Master" type="HSlider" parent="Pause panel/Menu/Audio/HBoxContainer/MusicVolumeSlider"]
 layout_mode = 2
 size_flags_vertical = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_p57ef")
+bus_name = "Master"
 
-[node name="Music" type="HSlider" parent="Pause panel/Menu/Audio/HBoxContainer/slider"]
+[node name="Music" type="HSlider" parent="Pause panel/Menu/Audio/HBoxContainer/MusicVolumeSlider"]
 layout_mode = 2
 size_flags_vertical = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("4_u5sy4")
+bus_name = "Music"
 
-[node name="SoundFX" type="HSlider" parent="Pause panel/Menu/Audio/HBoxContainer/slider"]
+[node name="SoundFX" type="HSlider" parent="Pause panel/Menu/Audio/HBoxContainer/MusicVolumeSlider"]
 layout_mode = 2
 size_flags_vertical = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("5_gee14")
+bus_name = "Sound FX"
 
 [node name="Back_option_Button" type="Button" parent="Pause panel/Menu/Audio"]
 layout_mode = 0
@@ -334,21 +383,19 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_lnu2h")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_70i5f")
-theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
-theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0tnpc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vtaks")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kvpfn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dinhu")
 text = "Назад"
 
 [node name="TileMap" parent="." instance=ExtResource("3_lnu2h")]
 position = Vector2(-86.1251, -30.6274)
+layer_0/tile_data = PackedInt32Array(1245217, 1245184, 20, 1310753, 1245184, 20, 1376289, 1245184, 20)
 
-[connection signal="pressed" from="Pause panel/Menu/Menu/Continue_Button" to="Pause panel/Menu" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Pause panel/Menu/Menu/Continue_Button" to="Pause panel/Menu" method="_on_continue_button_pressed"]
 [connection signal="pressed" from="Pause panel/Menu/Menu/Options_Button" to="Pause panel/Menu" method="_on_options_button_pressed"]
 [connection signal="pressed" from="Pause panel/Menu/Menu/Exit_Button" to="Pause panel/Menu" method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Pause panel/Menu/Options_menu/VBoxContainer2/Volume_Button" to="Pause panel/Menu" method="_on_volume_button_pressed"]
 [connection signal="pressed" from="Pause panel/Menu/Options_menu/Back_Button" to="Pause panel/Menu" method="_on_back_button_pressed"]
-[connection signal="value_changed" from="Pause panel/Menu/Audio/HBoxContainer/slider/Master" to="Pause panel/Menu" method="_on_master_value_changed"]
-[connection signal="value_changed" from="Pause panel/Menu/Audio/HBoxContainer/slider/Music" to="Pause panel/Menu" method="_on_music_value_changed"]
-[connection signal="value_changed" from="Pause panel/Menu/Audio/HBoxContainer/slider/SoundFX" to="Pause panel/Menu" method="_on_sound_fx_value_changed"]
 [connection signal="pressed" from="Pause panel/Menu/Audio/Back_option_Button" to="Pause panel/Menu" method="_on_back_option_button_pressed"]
