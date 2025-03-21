@@ -111,12 +111,12 @@ shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
 shadow_size = 5
 
 [node name="Game" type="Node2D"]
-visible = false
 
 [node name="Pause panel" type="CanvasLayer" parent="."]
 
 [node name="Menu" type="Control" parent="Pause panel"]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -139,7 +139,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_lti8b")
 
 [node name="Menu" type="VBoxContainer" parent="Pause panel/Menu"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -226,6 +225,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Options_menu" type="Control" parent="Pause panel/Menu"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
