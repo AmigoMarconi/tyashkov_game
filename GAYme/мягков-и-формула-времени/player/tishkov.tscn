@@ -4,22 +4,29 @@
 [ext_resource type="Script" uid="uid://canuw08ebrojg" path="res://player/scripts/tishkov.gd" id="1_f7arj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vp0k"]
+<<<<<<< HEAD
 size = Vector2(45.4179, 15.6076)
+=======
+size = Vector2(57.4151, 11.2151)
+>>>>>>> @feature/map
 
 [node name="Tishkov" type="CharacterBody2D"]
-texture_filter = 2
-position = Vector2(0, 40)
-scale = Vector2(2, 2)
+z_index = 1
+texture_filter = 1
 collision_mask = 16
 script = ExtResource("1_f7arj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+<<<<<<< HEAD
 position = Vector2(0.25, -16.8708)
+=======
+position = Vector2(0.25, 8)
+>>>>>>> @feature/map
 scale = Vector2(0.58347, 0.624158)
 shape = SubResource("RectangleShape2D_1vp0k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1.5, -43)
+position = Vector2(0.5, -20)
 scale = Vector2(0.0557507, 0.0501181)
 texture = ExtResource("1_cjyu3")
