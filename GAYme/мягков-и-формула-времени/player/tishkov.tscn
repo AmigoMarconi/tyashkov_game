@@ -5,10 +5,14 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vp0k"]
 <<<<<<< HEAD
+<<<<<<< HEAD
 size = Vector2(45.4179, 15.6076)
 =======
 size = Vector2(57.4151, 11.2151)
 >>>>>>> @feature/map
+=======
+size = Vector2(57.4151, 11.215)
+>>>>>>> 3db6caea9ef6e70f02fb60a277de3bcce80e3d78
 
 [node name="Tishkov" type="CharacterBody2D"]
 z_index = 1
@@ -18,10 +22,14 @@ script = ExtResource("1_f7arj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 <<<<<<< HEAD
+<<<<<<< HEAD
 position = Vector2(0.25, -16.8708)
 =======
 position = Vector2(0.25, 8)
 >>>>>>> @feature/map
+=======
+position = Vector2(0.25, 8)
+>>>>>>> 3db6caea9ef6e70f02fb60a277de3bcce80e3d78
 scale = Vector2(0.58347, 0.624158)
 shape = SubResource("RectangleShape2D_1vp0k")
 
