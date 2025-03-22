@@ -483,6 +483,7 @@ popup/item_2/text = "Адаптивный"
 popup/item_2/id = 2
 
 [node name="Back_video_Button" type="Button" parent="Video"]
+layout_mode = 0
 offset_left = -48.0
 offset_top = 78.0
 offset_right = 40.0
