@@ -342,6 +342,7 @@ text = "Назад"
 
 [node name="TileMap" parent="." instance=ExtResource("3_lnu2h")]
 position = Vector2(-86.1251, -30.6274)
+collision_visibility_mode = 1
 
 [connection signal="pressed" from="Pause panel/Menu/Menu/Continue_Button" to="Pause panel/Menu" method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Pause panel/Menu/Menu/Options_Button" to="Pause panel/Menu" method="_on_options_button_pressed"]
