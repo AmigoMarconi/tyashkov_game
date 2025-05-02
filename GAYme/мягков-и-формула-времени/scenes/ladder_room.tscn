@@ -1,0 +1,473 @@
+[gd_scene load_steps=26 format=4 uid="uid://dm5n71hxx1mbe"]
+
+[ext_resource type="Script" uid="uid://bp7bfefpeu0jr" path="res://scripts/menu/menu.gd" id="1_1fpud"]
+[ext_resource type="FontFile" uid="uid://d0jfh7mj4whuv" path="res://assets/alagard-12px-unicode.ttf" id="2_vs2oe"]
+[ext_resource type="Script" uid="uid://bb4hwgr0x84d2" path="res://scenes/menu/master.gd" id="3_r8b1h"]
+[ext_resource type="Script" uid="uid://bsekc1jg1is1f" path="res://scenes/menu/music.gd" id="4_bxe21"]
+[ext_resource type="Script" uid="uid://cs2d1u6lr6dou" path="res://scenes/menu/sound_fx.gd" id="5_iug7x"]
+[ext_resource type="PackedScene" uid="uid://cbfi66x567prd" path="res://scenes/tile_map_layer.tscn" id="6_3wk7u"]
+[ext_resource type="TileSet" uid="uid://ici8ft3ejb4w" path="res://assets/TileSTANKIN.tres" id="7_qtlsa"]
+[ext_resource type="PackedScene" uid="uid://b3womgd2wrjfc" path="res://player/tishkov.tscn" id="8_6sr6w"]
+[ext_resource type="PackedScene" uid="uid://bd4kyx8rmfcc8" path="res://level_perehod.tscn" id="9_3mcb2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lti8b"]
+modulate_color = Color(0.423651, 0.423651, 0.423651, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ouk20"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_con2f"]
+bg_color = Color(0.29219, 0.29219, 0.29219, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mae5d"]
+bg_color = Color(0.834614, 0.834614, 0.834614, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hy44"]
+bg_color = Color(0.509286, 0.509286, 0.509286, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lti8b"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ytvr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3eks"]
+bg_color = Color(0.834614, 0.834614, 0.834614, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v86rl"]
+bg_color = Color(0.509286, 0.509286, 0.509286, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13sgg"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i6lef"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_70i5f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0tnpc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtaks"]
+bg_color = Color(0.834614, 0.834614, 0.834614, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvpfn"]
+bg_color = Color(0.509286, 0.509286, 0.509286, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dinhu"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[node name="Ladder_room" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Pause panel" type="CanvasLayer" parent="."]
+
+[node name="Menu" type="Control" parent="Pause panel"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1fpud")
+
+[node name="Panel" type="Panel" parent="Pause panel/Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_lti8b")
+
+[node name="Menu" type="VBoxContainer" parent="Pause panel/Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -48.0
+offset_right = 250.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -23
+
+[node name="Continue_Button" type="Button" parent="Pause panel/Menu/Menu"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_disabled_color = Color(0.129558, 0.129559, 0.129558, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_vs2oe")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ouk20")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_con2f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mae5d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4hy44")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lti8b")
+text = "Продолжить"
+
+[node name="Options_Button" type="Button" parent="Pause panel/Menu/Menu"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_vs2oe")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ouk20")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mae5d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4hy44")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lti8b")
+text = "Настройки"
+
+[node name="Exit_Button" type="Button" parent="Pause panel/Menu/Menu"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_vs2oe")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ouk20")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mae5d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4hy44")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lti8b")
+text = "Выход"
+
+[node name="Label" type="Label" parent="Pause panel/Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -320.0
+offset_right = 256.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -15
+theme_override_constants/shadow_offset_y = 13
+theme_override_fonts/font = ExtResource("2_vs2oe")
+theme_override_font_sizes/font_size = 55
+text = "Тяжков 
+и 
+формула времени"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options_menu" type="Control" parent="Pause panel/Menu"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Pause panel/Menu/Options_menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -48.0
+offset_right = 250.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Volume_Button" type="Button" parent="Pause panel/Menu/Options_menu/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_vs2oe")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4ytvr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
+text = "Звук"
+
+[node name="Diff_Button2" type="Button" parent="Pause panel/Menu/Options_menu/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_vs2oe")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i6lef")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
+text = "Сложность"
+
+[node name="Back_Button" type="Button" parent="Pause panel/Menu/Options_menu"]
+layout_mode = 2
+offset_left = -250.0
+offset_top = 158.0
+offset_right = 250.0
+offset_bottom = 200.0
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_vs2oe")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_70i5f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
+text = "Назад"
+
+[node name="Audio" type="Control" parent="Pause panel/Menu"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Pause panel/Menu/Audio"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.5
+offset_top = -46.0
+offset_right = 203.5
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="labels" type="VBoxContainer" parent="Pause panel/Menu/Audio/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.08
+
+[node name="Master" type="Label" parent="Pause panel/Menu/Audio/HBoxContainer/labels"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Звук"
+
+[node name="Music" type="Label" parent="Pause panel/Menu/Audio/HBoxContainer/labels"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 20
+text = "Музыка"
+
+[node name="SoundFX" type="Label" parent="Pause panel/Menu/Audio/HBoxContainer/labels"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 20
+text = "Звуковые эффекты"
+
+[node name="MusicVolumeSlider" type="VBoxContainer" parent="Pause panel/Menu/Audio/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Master" type="HSlider" parent="Pause panel/Menu/Audio/HBoxContainer/MusicVolumeSlider"]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_r8b1h")
+bus_name = "Master"
+
+[node name="Music" type="HSlider" parent="Pause panel/Menu/Audio/HBoxContainer/MusicVolumeSlider"]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("4_bxe21")
+bus_name = "Music"
+
+[node name="SoundFX" type="HSlider" parent="Pause panel/Menu/Audio/HBoxContainer/MusicVolumeSlider"]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("5_iug7x")
+bus_name = "Sound FX"
+
+[node name="Back_option_Button" type="Button" parent="Pause panel/Menu/Audio"]
+layout_mode = 0
+offset_left = -48.0
+offset_top = 78.0
+offset_right = 40.0
+offset_bottom = 120.0
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_vs2oe")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0tnpc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vtaks")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kvpfn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dinhu")
+text = "Назад"
+
+[node name="TileMap" parent="." instance=ExtResource("6_3wk7u")]
+position = Vector2(-86.1251, -30.6274)
+collision_visibility_mode = 1
+
+[node name="Пол" type="TileMapLayer" parent="TileMap"]
+y_sort_enabled = true
+use_parent_material = true
+position = Vector2(-1, 0)
+tile_map_data = PackedByteArray("AAAQAAgAAQASAAAAAAAQAAkAAQASAAEAAAAQAAoAAQASAAIAAAARAAgAAQATAAAAAAARAAkAAQATAAEAAAARAAoAAQATAAIAAAASAAgAAQAUAAAAAAASAAkAAQAUAAEAAAASAAoAAQAUAAIAAAATAAgAAQASAAAAAAATAAkAAQASAAEAAAATAAoAAQASAAIAAAAUAAgAAQATAAAAAAAUAAkAAQATAAEAAAAUAAoAAQATAAIAAAAVAAgAAQAUAAAAAAAVAAkAAQAUAAEAAAAVAAoAAQAUAAIAAAAWAAgAAQASAAAAAAAWAAkAAQASAAEAAAAWAAoAAQASAAIAAAAXAAgAAQATAAAAAAAXAAkAAQATAAEAAAAXAAoAAQATAAIAAAAYAAgAAQAUAAAAAAAYAAkAAQAUAAEAAAAYAAoAAQAUAAIAAAAZAAgAAQASAAAAAAAZAAkAAQASAAEAAAAZAAoAAQASAAIAAAAaAAgAAQATAAAAAAAaAAkAAQATAAEAAAAaAAoAAQATAAIAAAAbAAgAAQAUAAAAAAAbAAkAAQAUAAEAAAAbAAoAAQAUAAIAAAAcAAgAAQASAAAAAAAcAAkAAQASAAEAAAAcAAoAAQASAAIAAAAdAAgAAQATAAAAAAAdAAkAAQATAAEAAAAdAAoAAQATAAIAAAAeAAgAAQAUAAAAAAAeAAkAAQAUAAEAAAAeAAoAAQAUAAIAAAAfAAgAAQASAAAAAAAfAAkAAQASAAEAAAAfAAoAAQASAAIAAAAgAAgAAQATAAAAAAAgAAkAAQATAAEAAAAgAAoAAQATAAIAAAAhAAgAAQAUAAAAAAAhAAkAAQAUAAEAAAAhAAoAAQAUAAIAAAAiAAgAAQASAAAAAAAiAAkAAQASAAEAAAAiAAoAAQASAAIAAAAjAAgAAQATAAAAAAAjAAkAAQATAAEAAAAjAAoAAQATAAIAAAAkAAgAAQAUAAAAAAAkAAkAAQAUAAEAAAAkAAoAAQAUAAIAAAAlAAgAAQASAAAAAAAlAAkAAQASAAEAAAAlAAoAAQASAAIAAAAmAAgAAQATAAAAAAAmAAkAAQATAAEAAAAmAAoAAQATAAIAAAAnAAgAAQAUAAAAAAAnAAkAAQAUAAEAAAAnAAoAAQAUAAIAAAAoAAgAAQASAAAAAAAoAAkAAQASAAEAAAAoAAoAAQASAAIAAAApAAgAAQATAAAAAAApAAkAAQATAAEAAAApAAoAAQATAAIAAAAqAAgAAQAUAAAAAAAqAAkAAQAUAAEAAAAqAAoAAQAUAAIAAAAoAAsAAQASAAAAAAAoAAwAAQASAAEAAAAoAA0AAQASAAIAAAApAAsAAQATAAAAAAApAAwAAQATAAEAAAApAA0AAQATAAIAAAAqAAsAAQAUAAAAAAAqAAwAAQAUAAEAAAAqAA0AAQAUAAIAAAAlAAsAAQASAAAAAAAlAAwAAQASAAEAAAAlAA0AAQASAAIAAAAmAAsAAQATAAAAAAAmAAwAAQATAAEAAAAmAA0AAQATAAIAAAAnAAsAAQAUAAAAAAAnAAwAAQAUAAEAAAAnAA0AAQAUAAIAAAAiAAsAAQASAAAAAAAiAAwAAQASAAEAAAAiAA0AAQASAAIAAAAjAAsAAQATAAAAAAAjAAwAAQATAAEAAAAjAA0AAQATAAIAAAAkAAsAAQAUAAAAAAAkAAwAAQAUAAEAAAAkAA0AAQAUAAIAAAAfAAsAAQASAAAAAAAfAAwAAQASAAEAAAAfAA0AAQASAAIAAAAgAAsAAQATAAAAAAAgAAwAAQATAAEAAAAgAA0AAQATAAIAAAAhAAsAAQAUAAAAAAAhAAwAAQAUAAEAAAAhAA0AAQAUAAIAAAAcAAsAAQASAAAAAAAcAAwAAQASAAEAAAAcAA0AAQASAAIAAAAdAAsAAQATAAAAAAAdAAwAAQATAAEAAAAdAA0AAQATAAIAAAAeAAsAAQAUAAAAAAAeAAwAAQAUAAEAAAAeAA0AAQAUAAIAAAAZAAsAAQASAAAAAAAZAAwAAQASAAEAAAAZAA0AAQASAAIAAAAaAAsAAQATAAAAAAAaAAwAAQATAAEAAAAaAA0AAQATAAIAAAAbAAsAAQAUAAAAAAAbAAwAAQAUAAEAAAAbAA0AAQAUAAIAAAAWAAsAAQASAAAAAAAWAAwAAQASAAEAAAAWAA0AAQASAAIAAAAXAAsAAQATAAAAAAAXAAwAAQATAAEAAAAXAA0AAQATAAIAAAAYAAsAAQAUAAAAAAAYAAwAAQAUAAEAAAAYAA0AAQAUAAIAAAATAAsAAQASAAAAAAATAAwAAQASAAEAAAATAA0AAQASAAIAAAAUAAsAAQATAAAAAAAUAAwAAQATAAEAAAAUAA0AAQATAAIAAAAVAAsAAQAUAAAAAAAVAAwAAQAUAAEAAAAVAA0AAQAUAAIAAAAQAAsAAQASAAAAAAAQAAwAAQASAAEAAAAQAA0AAQASAAIAAAARAAsAAQATAAAAAAARAAwAAQATAAEAAAARAA0AAQATAAIAAAASAAsAAQAUAAAAAAASAAwAAQAUAAEAAAASAA0AAQAUAAIAAAAQAA4AAQASAAAAAAAQAA8AAQASAAEAAAAQABAAAQASAAIAAAARAA4AAQATAAAAAAARAA8AAQATAAEAAAARABAAAQATAAIAAAASAA4AAQAUAAAAAAASAA8AAQAUAAEAAAASABAAAQAUAAIAAAATAA4AAQASAAAAAAATAA8AAQASAAEAAAATABAAAQASAAIAAAAUAA4AAQATAAAAAAAUAA8AAQATAAEAAAAUABAAAQATAAIAAAAVAA4AAQAUAAAAAAAVAA8AAQAUAAEAAAAVABAAAQAUAAIAAAAWAA4AAQASAAAAAAAWAA8AAQASAAEAAAAWABAAAQASAAIAAAAXAA4AAQATAAAAAAAXAA8AAQATAAEAAAAXABAAAQATAAIAAAAYAA4AAQAUAAAAAAAYAA8AAQAUAAEAAAAYABAAAQAUAAIAAAAZAA4AAQASAAAAAAAZAA8AAQASAAEAAAAZABAAAQASAAIAAAAaAA4AAQATAAAAAAAaAA8AAQATAAEAAAAaABAAAQATAAIAAAAbAA4AAQAUAAAAAAAbAA8AAQAUAAEAAAAbABAAAQAUAAIAAAAcAA4AAQASAAAAAAAcAA8AAQASAAEAAAAcABAAAQASAAIAAAAdAA4AAQATAAAAAAAdAA8AAQATAAEAAAAdABAAAQATAAIAAAAeAA4AAQAUAAAAAAAeAA8AAQAUAAEAAAAeABAAAQAUAAIAAAAfAA4AAQASAAAAAAAfAA8AAQASAAEAAAAfABAAAQASAAIAAAAgAA4AAQATAAAAAAAgAA8AAQATAAEAAAAgABAAAQATAAIAAAAhAA4AAQAUAAAAAAAhAA8AAQAUAAEAAAAhABAAAQAUAAIAAAAiAA4AAQASAAAAAAAiAA8AAQASAAEAAAAiABAAAQASAAIAAAAjAA4AAQATAAAAAAAjAA8AAQATAAEAAAAjABAAAQATAAIAAAAkAA4AAQAUAAAAAAAkAA8AAQAUAAEAAAAkABAAAQAUAAIAAAAlAA4AAQASAAAAAAAlAA8AAQASAAEAAAAlABAAAQASAAIAAAAmAA4AAQATAAAAAAAmAA8AAQATAAEAAAAmABAAAQATAAIAAAAnAA4AAQAUAAAAAAAnAA8AAQAUAAEAAAAnABAAAQAUAAIAAAAoAA4AAQASAAAAAAAoAA8AAQASAAEAAAAoABAAAQASAAIAAAApAA4AAQATAAAAAAApAA8AAQATAAEAAAApABAAAQATAAIAAAAqAA4AAQAUAAAAAAAqAA8AAQAUAAEAAAAqABAAAQAUAAIAAAAoABEAAQASAAAAAAAoABIAAQASAAEAAAAoABMAAQASAAIAAAApABEAAQATAAAAAAApABIAAQATAAEAAAApABMAAQATAAIAAAAqABEAAQAUAAAAAAAqABIAAQAUAAEAAAAqABMAAQAUAAIAAAAlABEAAQASAAAAAAAlABIAAQASAAEAAAAlABMAAQASAAIAAAAmABEAAQATAAAAAAAmABIAAQATAAEAAAAmABMAAQATAAIAAAAnABEAAQAUAAAAAAAnABIAAQAUAAEAAAAnABMAAQAUAAIAAAAiABEAAQASAAAAAAAiABIAAQASAAEAAAAiABMAAQASAAIAAAAjABEAAQATAAAAAAAjABIAAQATAAEAAAAjABMAAQATAAIAAAAkABEAAQAUAAAAAAAkABIAAQAUAAEAAAAkABMAAQAUAAIAAAAfABEAAQASAAAAAAAfABIAAQASAAEAAAAfABMAAQASAAIAAAAgABEAAQATAAAAAAAgABIAAQATAAEAAAAgABMAAQATAAIAAAAhABEAAQAUAAAAAAAhABIAAQAUAAEAAAAhABMAAQAUAAIAAAAcABEAAQASAAAAAAAcABIAAQASAAEAAAAcABMAAQASAAIAAAAdABEAAQATAAAAAAAdABIAAQATAAEAAAAdABMAAQATAAIAAAAeABEAAQAUAAAAAAAeABIAAQAUAAEAAAAeABMAAQAUAAIAAAAZABEAAQASAAAAAAAZABIAAQASAAEAAAAZABMAAQASAAIAAAAaABEAAQATAAAAAAAaABIAAQATAAEAAAAaABMAAQATAAIAAAAbABEAAQAUAAAAAAAbABIAAQAUAAEAAAAbABMAAQAUAAIAAAAWABEAAQASAAAAAAAWABIAAQASAAEAAAAWABMAAQASAAIAAAAXABEAAQATAAAAAAAXABIAAQATAAEAAAAXABMAAQATAAIAAAAYABEAAQAUAAAAAAAYABIAAQAUAAEAAAAYABMAAQAUAAIAAAATABEAAQASAAAAAAATABIAAQASAAEAAAATABMAAQASAAIAAAAUABEAAQATAAAAAAAUABIAAQATAAEAAAAUABMAAQATAAIAAAAVABEAAQAUAAAAAAAVABIAAQAUAAEAAAAVABMAAQAUAAIAAAAQABEAAQASAAAAAAAQABIAAQASAAEAAAAQABMAAQASAAIAAAARABEAAQATAAAAAAARABIAAQATAAEAAAARABMAAQATAAIAAAASABEAAQAUAAAAAAASABIAAQAUAAEAAAASABMAAQAUAAIAAAAQABQAAQASAAAAAAAQABUAAQASAAEAAAAQABYAAQASAAIAAAARABQAAQATAAAAAAARABUAAQATAAEAAAARABYAAQATAAIAAAASABQAAQAUAAAAAAASABUAAQAUAAEAAAASABYAAQAUAAIAAAATABQAAQASAAAAAAATABUAAQASAAEAAAATABYAAQASAAIAAAAUABQAAQATAAAAAAAUABUAAQATAAEAAAAUABYAAQATAAIAAAAVABQAAQAUAAAAAAAVABUAAQAUAAEAAAAVABYAAQAUAAIAAAAWABQAAQASAAAAAAAWABUAAQASAAEAAAAWABYAAQASAAIAAAAXABQAAQATAAAAAAAXABUAAQATAAEAAAAXABYAAQATAAIAAAAYABQAAQAUAAAAAAAYABUAAQAUAAEAAAAYABYAAQAUAAIAAAAZABQAAQASAAAAAAAZABUAAQASAAEAAAAZABYAAQASAAIAAAAaABQAAQATAAAAAAAaABUAAQATAAEAAAAaABYAAQATAAIAAAAbABQAAQAUAAAAAAAbABUAAQAUAAEAAAAbABYAAQAUAAIAAAAcABQAAQASAAAAAAAcABUAAQASAAEAAAAcABYAAQASAAIAAAAdABQAAQATAAAAAAAdABUAAQATAAEAAAAdABYAAQATAAIAAAAeABQAAQAUAAAAAAAeABUAAQAUAAEAAAAeABYAAQAUAAIAAAAfABQAAQASAAAAAAAfABUAAQASAAEAAAAfABYAAQASAAIAAAAgABQAAQATAAAAAAAgABUAAQATAAEAAAAgABYAAQATAAIAAAAhABQAAQAUAAAAAAAhABUAAQAUAAEAAAAhABYAAQAUAAIAAAAiABQAAQASAAAAAAAiABUAAQASAAEAAAAiABYAAQASAAIAAAAjABQAAQATAAAAAAAjABUAAQATAAEAAAAjABYAAQATAAIAAAAkABQAAQAUAAAAAAAkABUAAQAUAAEAAAAkABYAAQAUAAIAAAAlABQAAQASAAAAAAAlABUAAQASAAEAAAAlABYAAQASAAIAAAAmABQAAQATAAAAAAAmABUAAQATAAEAAAAmABYAAQATAAIAAAAnABQAAQAUAAAAAAAnABUAAQAUAAEAAAAnABYAAQAUAAIAAAAoABQAAQASAAAAAAAoABUAAQASAAEAAAAoABYAAQASAAIAAAApABQAAQATAAAAAAApABUAAQATAAEAAAApABYAAQATAAIAAAAqABQAAQAUAAAAAAAqABUAAQAUAAEAAAAqABYAAQAUAAIAAAAoABcAAQASAAAAAAAoABgAAQASAAEAAAAoABkAAQASAAIAAAApABcAAQATAAAAAAApABgAAQATAAEAAAApABkAAQATAAIAAAAqABcAAQAUAAAAAAAqABgAAQAUAAEAAAAqABkAAQAUAAIAAAAoABoAAQASAAAAAAAoABsAAQASAAEAAAAoABwAAQASAAIAAAApABoAAQATAAAAAAApABsAAQATAAEAAAApABwAAQATAAIAAAAqABoAAQAUAAAAAAAqABsAAQAUAAEAAAAqABwAAQAUAAIAAAAoAB0AAQASAAAAAAAoAB4AAQASAAEAAAAoAB8AAQASAAIAAAApAB0AAQATAAAAAAApAB4AAQATAAEAAAApAB8AAQATAAIAAAAqAB0AAQAUAAAAAAAqAB4AAQAUAAEAAAAqAB8AAQAUAAIAAAAlAB0AAQASAAAAAAAlAB4AAQASAAEAAAAlAB8AAQASAAIAAAAmAB0AAQATAAAAAAAmAB4AAQATAAEAAAAmAB8AAQATAAIAAAAnAB0AAQAUAAAAAAAnAB4AAQAUAAEAAAAnAB8AAQAUAAIAAAAiAB0AAQASAAAAAAAiAB4AAQASAAEAAAAiAB8AAQASAAIAAAAjAB0AAQATAAAAAAAjAB4AAQATAAEAAAAjAB8AAQATAAIAAAAkAB0AAQAUAAAAAAAkAB4AAQAUAAEAAAAkAB8AAQAUAAIAAAAfAB0AAQASAAAAAAAfAB4AAQASAAEAAAAfAB8AAQASAAIAAAAgAB0AAQATAAAAAAAgAB4AAQATAAEAAAAgAB8AAQATAAIAAAAhAB0AAQAUAAAAAAAhAB4AAQAUAAEAAAAhAB8AAQAUAAIAAAAfABoAAQASAAAAAAAfABsAAQASAAEAAAAfABwAAQASAAIAAAAgABoAAQATAAAAAAAgABsAAQATAAEAAAAgABwAAQATAAIAAAAhABoAAQAUAAAAAAAhABsAAQAUAAEAAAAhABwAAQAUAAIAAAAcABoAAQASAAAAAAAcABsAAQASAAEAAAAcABwAAQASAAIAAAAdABoAAQATAAAAAAAdABsAAQATAAEAAAAdABwAAQATAAIAAAAeABoAAQAUAAAAAAAeABsAAQAUAAEAAAAeABwAAQAUAAIAAAAZABoAAQASAAAAAAAZABsAAQASAAEAAAAZABwAAQASAAIAAAAaABoAAQATAAAAAAAaABsAAQATAAEAAAAaABwAAQATAAIAAAAbABoAAQAUAAAAAAAbABsAAQAUAAEAAAAbABwAAQAUAAIAAAAWABoAAQASAAAAAAAWABsAAQASAAEAAAAWABwAAQASAAIAAAAXABoAAQATAAAAAAAXABsAAQATAAEAAAAXABwAAQATAAIAAAAYABoAAQAUAAAAAAAYABsAAQAUAAEAAAAYABwAAQAUAAIAAAATABoAAQASAAAAAAATABsAAQASAAEAAAATABwAAQASAAIAAAAUABoAAQATAAAAAAAUABsAAQATAAEAAAAUABwAAQATAAIAAAAVABoAAQAUAAAAAAAVABsAAQAUAAEAAAAVABwAAQAUAAIAAAATABcAAQASAAAAAAATABgAAQASAAEAAAATABkAAQASAAIAAAAUABcAAQATAAAAAAAUABgAAQATAAEAAAAUABkAAQATAAIAAAAVABcAAQAUAAAAAAAVABgAAQAUAAEAAAAVABkAAQAUAAIAAAAQABcAAQASAAAAAAAQABgAAQASAAEAAAAQABkAAQASAAIAAAARABcAAQATAAAAAAARABgAAQATAAEAAAARABkAAQATAAIAAAASABcAAQAUAAAAAAASABgAAQAUAAEAAAASABkAAQAUAAIAAAAQABoAAQASAAAAAAAQABsAAQASAAEAAAAQABwAAQASAAIAAAARABoAAQATAAAAAAARABsAAQATAAEAAAARABwAAQATAAIAAAASABoAAQAUAAAAAAASABsAAQAUAAEAAAASABwAAQAUAAIAAAAQAB0AAQASAAAAAAAQAB4AAQASAAEAAAAQAB8AAQASAAIAAAARAB0AAQATAAAAAAARAB4AAQATAAEAAAARAB8AAQATAAIAAAASAB0AAQAUAAAAAAASAB4AAQAUAAEAAAASAB8AAQAUAAIAAAATAB0AAQASAAAAAAATAB4AAQASAAEAAAATAB8AAQASAAIAAAAUAB0AAQATAAAAAAAUAB4AAQATAAEAAAAUAB8AAQATAAIAAAAVAB0AAQAUAAAAAAAVAB4AAQAUAAEAAAAVAB8AAQAUAAIAAAAWAB0AAQASAAAAAAAWAB4AAQASAAEAAAAWAB8AAQASAAIAAAAXAB0AAQATAAAAAAAXAB4AAQATAAEAAAAXAB8AAQATAAIAAAAYAB0AAQAUAAAAAAAYAB4AAQAUAAEAAAAYAB8AAQAUAAIAAAAZAB0AAQASAAAAAAAZAB4AAQASAAEAAAAZAB8AAQASAAIAAAAaAB0AAQATAAAAAAAaAB4AAQATAAEAAAAaAB8AAQATAAIAAAAbAB0AAQAUAAAAAAAbAB4AAQAUAAEAAAAbAB8AAQAUAAIAAAAiABoAAQASAAAAAAAiABsAAQASAAEAAAAiABwAAQASAAIAAAAjABoAAQATAAAAAAAjABsAAQATAAEAAAAjABwAAQATAAIAAAAkABoAAQAUAAAAAAAkABsAAQAUAAEAAAAkABwAAQAUAAIAAAAiABcAAQASAAAAAAAiABgAAQASAAEAAAAiABkAAQASAAIAAAAjABcAAQATAAAAAAAjABgAAQATAAEAAAAjABkAAQATAAIAAAAkABcAAQAUAAAAAAAkABgAAQAUAAEAAAAkABkAAQAUAAIAAAAfABcAAQASAAAAAAAfABgAAQASAAEAAAAfABkAAQASAAIAAAAgABcAAQATAAAAAAAgABgAAQATAAEAAAAgABkAAQATAAIAAAAhABcAAQAUAAAAAAAhABgAAQAUAAEAAAAhABkAAQAUAAIAAAAWABcAAQASAAAAAAAWABgAAQASAAEAAAAWABkAAQASAAIAAAAXABcAAQATAAAAAAAXABgAAQATAAEAAAAXABkAAQATAAIAAAAYABcAAQAUAAAAAAAYABgAAQAUAAEAAAAYABkAAQAUAAIAAAAZABcAAQASAAAAAAAZABgAAQASAAEAAAAZABkAAQASAAIAAAAaABcAAQATAAAAAAAaABgAAQATAAEAAAAaABkAAQATAAIAAAAbABcAAQAUAAAAAAAbABgAAQAUAAEAAAAbABkAAQAUAAIAAAAcABcAAQASAAAAAAAcABgAAQASAAEAAAAcABkAAQASAAIAAAAdABcAAQATAAAAAAAdABgAAQATAAEAAAAdABkAAQATAAIAAAAeABcAAQAUAAAAAAAeABgAAQAUAAEAAAAeABkAAQAUAAIAAAAlABcAAQASAAAAAAAlABgAAQASAAEAAAAlABkAAQASAAIAAAAmABcAAQATAAAAAAAmABgAAQATAAEAAAAmABkAAQATAAIAAAAnABcAAQAUAAAAAAAnABgAAQAUAAEAAAAnABkAAQAUAAIAAAAcAB0AAQASAAAAAAAcAB4AAQASAAEAAAAcAB8AAQASAAIAAAAdAB0AAQATAAAAAAAdAB4AAQATAAEAAAAdAB8AAQATAAIAAAAeAB0AAQAUAAAAAAAeAB4AAQAUAAEAAAAeAB8AAQAUAAIAAAAlABoAAQASAAAAAAAlABsAAQASAAEAAAAlABwAAQASAAIAAAAmABoAAQATAAAAAAAmABsAAQATAAEAAAAmABwAAQATAAIAAAAnABoAAQAUAAAAAAAnABsAAQAUAAEAAAAnABwAAQAUAAIAAAArAAgAAQASAAAAAAArAAkAAQASAAEAAAArAAoAAQASAAIAAAAsAAgAAQATAAAAAAAsAAkAAQATAAEAAAAsAAoAAQATAAIAAAAtAAgAAQAUAAAAAAAtAAkAAQAUAAEAAAAtAAoAAQAUAAIAAAArAAsAAQASAAAAAAArAAwAAQASAAEAAAArAA0AAQASAAIAAAAsAAsAAQATAAAAAAAsAAwAAQATAAEAAAAsAA0AAQATAAIAAAAtAAsAAQAUAAAAAAAtAAwAAQAUAAEAAAAtAA0AAQAUAAIAAAArAA4AAQASAAAAAAArAA8AAQASAAEAAAArABAAAQASAAIAAAAsAA4AAQATAAAAAAAsAA8AAQATAAEAAAAsABAAAQATAAIAAAAtAA4AAQAUAAAAAAAtAA8AAQAUAAEAAAAtABAAAQAUAAIAAAArABEAAQASAAAAAAArABIAAQASAAEAAAArABMAAQASAAIAAAAsABEAAQATAAAAAAAsABIAAQATAAEAAAAsABMAAQATAAIAAAAtABEAAQAUAAAAAAAtABIAAQAUAAEAAAAtABMAAQAUAAIAAAArABQAAQASAAAAAAArABUAAQASAAEAAAArABYAAQASAAIAAAAsABQAAQATAAAAAAAsABUAAQATAAEAAAAsABYAAQATAAIAAAAtABQAAQAUAAAAAAAtABUAAQAUAAEAAAAtABYAAQAUAAIAAAArABcAAQASAAAAAAArABgAAQASAAEAAAArABkAAQASAAIAAAAsABcAAQATAAAAAAAsABgAAQATAAEAAAAsABkAAQATAAIAAAAtABcAAQAUAAAAAAAtABgAAQAUAAEAAAAtABkAAQAUAAIAAAArABoAAQASAAAAAAArABsAAQASAAEAAAArABwAAQASAAIAAAAsABoAAQATAAAAAAAsABsAAQATAAEAAAAsABwAAQATAAIAAAAtABoAAQAUAAAAAAAtABsAAQAUAAEAAAAtABwAAQAUAAIAAAArAB0AAQASAAAAAAArAB4AAQASAAEAAAArAB8AAQASAAIAAAAsAB0AAQATAAAAAAAsAB4AAQATAAEAAAAsAB8AAQATAAIAAAAtAB0AAQAUAAAAAAAtAB4AAQAUAAEAAAAtAB8AAQAUAAIAAAA=")
+tile_set = ExtResource("7_qtlsa")
+collision_visibility_mode = 1
+
+[node name="Ковры" type="TileMapLayer" parent="TileMap"]
+y_sort_enabled = true
+use_parent_material = true
+position = Vector2(-1, 0)
+tile_set = ExtResource("7_qtlsa")
+collision_visibility_mode = 1
+
+[node name="Стены" type="TileMapLayer" parent="TileMap"]
+z_index = 1
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAASABwAAgATABgAAAAWABwAAgATABgAAAAaABwAAgATABgAAAAeABwAAgATABgAAAAiABwAAgATABgAAAAmABwAAgATABgAAAAQABwAAgASABgAAAATAAcAAgAMABgAAAAZAAcAAgAMABgAAAAfAAcAAgAMABgAAAAlAAcAAgAMABgAAAAqAAcAAgAMABgAAAAqABwAAgATABgAAAAtABwAAgAXABgAAAArABwAAgATABgAAAA=")
+tile_set = ExtResource("7_qtlsa")
+
+[node name="Двери" type="TileMapLayer" parent="TileMap"]
+z_index = 1
+y_sort_enabled = true
+scale = Vector2(0.9, 0.9)
+tile_set = ExtResource("7_qtlsa")
+
+[node name="Пропы" type="TileMapLayer" parent="TileMap"]
+z_index = 1
+y_sort_enabled = true
+tile_set = ExtResource("7_qtlsa")
+
+[node name="Пропы на стол" type="TileMapLayer" parent="TileMap"]
+z_index = 2
+tile_set = ExtResource("7_qtlsa")
+
+[node name="Увеличенные пропы" type="TileMapLayer" parent="TileMap"]
+z_index = 1
+y_sort_enabled = true
+scale = Vector2(1.5, 1.5)
+tile_set = ExtResource("7_qtlsa")
+
+[node name="Потолок" type="TileMapLayer" parent="TileMap"]
+z_index = 2
+tile_map_data = PackedByteArray("AAARAAMAAgAUABIAAAARAAQAAgAUABMAAAASAAMAAgAVABIAAAASAAQAAgAVABMAAAATAAMAAgAUABIAAAATAAQAAgAUABMAAAAUAAMAAgAVABIAAAAUAAQAAgAVABMAAAAVAAMAAgAUABIAAAAVAAQAAgAUABMAAAAWAAMAAgAVABIAAAAWAAQAAgAVABMAAAAXAAMAAgAUABIAAAAXAAQAAgAUABMAAAAYAAMAAgAVABIAAAAYAAQAAgAVABMAAAAZAAMAAgAUABIAAAAZAAQAAgAUABMAAAAaAAMAAgAVABIAAAAaAAQAAgAVABMAAAAbAAMAAgAUABIAAAAbAAQAAgAUABMAAAAcAAMAAgAVABIAAAAcAAQAAgAVABMAAAAdAAMAAgAUABIAAAAdAAQAAgAUABMAAAAeAAMAAgAVABIAAAAeAAQAAgAVABMAAAAfAAMAAgAUABIAAAAfAAQAAgAUABMAAAAgAAMAAgAVABIAAAAgAAQAAgAVABMAAAAhAAMAAgAUABIAAAAhAAQAAgAUABMAAAAiAAMAAgAVABIAAAAiAAQAAgAVABMAAAAjAAMAAgAUABIAAAAjAAQAAgAUABMAAAAkAAMAAgAVABIAAAAkAAQAAgAVABMAAAAlAAMAAgAUABIAAAAlAAQAAgAUABMAAAAmAAMAAgAVABIAAAAmAAQAAgAVABMAAAAnAAMAAgAUABIAAAAnAAQAAgAUABMAAAAoAAMAAgAVABIAAAAoAAQAAgAVABMAAAApAAMAAgAUABIAAAApAAQAAgAUABMAAAAqAAMAAgAVABIAAAAqAAQAAgAVABMAAAArAAMAAgAUABIAAAArAAQAAgAUABMAAAAsAAMAAgAVABIAAAAsAAQAAgAVABMAAAAtAAMAAgAWABIAAAAtAAQAAgAWABMAAAAtAAUAAgAWABQAAAAuAAMAAgAXABIAAAAuAAQAAgAXABMAAAAuAAUAAgAXABQAAAAtAAYAAgAWABQAAAAuAAYAAgAXABQAAAAtAAcAAgAWABQAAAAuAAcAAgAXABQAAAAtAAgAAgAWABQAAAAuAAgAAgAXABQAAAAtAAkAAgAWABQAAAAuAAkAAgAXABQAAAAtAAoAAgAWABQAAAAuAAoAAgAXABQAAAAtAAsAAgAWABQAAAAuAAsAAgAXABQAAAAtAAwAAgAWABQAAAAuAAwAAgAXABQAAAAtAA0AAgAWABQAAAAuAA0AAgAXABQAAAAtAA4AAgAWABQAAAAuAA4AAgAXABQAAAAtAA8AAgAWABQAAAAuAA8AAgAXABQAAAAtABAAAgAWABQAAAAuABAAAgAXABQAAAAtABEAAgAWABQAAAAuABEAAgAXABQAAAAtABIAAgAWABQAAAAuABIAAgAXABQAAAAtABMAAgAWABQAAAAuABMAAgAXABQAAAAtABQAAgAWABQAAAAuABQAAgAXABQAAAAtABUAAgAWABQAAAAuABUAAgAXABQAAAAtABYAAgAWABQAAAAuABYAAgAXABQAAAAtABcAAgAWABQAAAAuABcAAgAXABQAAAAtABgAAgAWABUAAAAuABgAAgAXABUAAAAtABkAAgAWABYAAAAuABkAAgAXABYAAAAsABgAAgAVABUAAAAsABkAAgAVABYAAAAqABgAAgAUABUAAAAqABkAAgAUABYAAAArABgAAgAVABUAAAArABkAAgAVABYAAAAoABgAAgAUABUAAAAoABkAAgAUABYAAAApABgAAgAVABUAAAApABkAAgAVABYAAAAmABgAAgAUABUAAAAmABkAAgAUABYAAAAnABgAAgAVABUAAAAnABkAAgAVABYAAAAkABgAAgAUABUAAAAkABkAAgAUABYAAAAlABgAAgAVABUAAAAlABkAAgAVABYAAAAiABgAAgAUABUAAAAiABkAAgAUABYAAAAjABgAAgAVABUAAAAjABkAAgAVABYAAAAgABgAAgAUABUAAAAgABkAAgAUABYAAAAhABgAAgAVABUAAAAhABkAAgAVABYAAAAeABgAAgAUABUAAAAeABkAAgAUABYAAAAfABgAAgAVABUAAAAfABkAAgAVABYAAAAcABgAAgAUABUAAAAcABkAAgAUABYAAAAdABgAAgAVABUAAAAdABkAAgAVABYAAAAaABgAAgAUABUAAAAbABgAAgAVABUAAAAbABkAAgAVABYAAAAYABgAAgAUABUAAAAZABgAAgAVABUAAAAWABgAAgAUABUAAAAXABgAAgAVABUAAAAUABgAAgAUABUAAAAUABkAAgAUABYAAAAVABgAAgAVABUAAAAVABkAAgAVABYAAAAWABkAAgAUABYAAAAXABkAAgAVABYAAAAYABkAAgAUABYAAAAZABkAAgAVABYAAAAaABkAAgAUABYAAAASABgAAgAUABUAAAASABkAAgAUABYAAAATABgAAgAVABUAAAATABkAAgAVABYAAAAQABgAAgATABUAAAAQABkAAgATABYAAAARABgAAgAVABUAAAARABkAAgAVABYAAAAPABgAAgASABUAAAAPABkAAgASABYAAAAPABcAAgASABQAAAAQABcAAgATABQAAAAPABYAAgASABQAAAAQABYAAgATABQAAAAPABUAAgASABQAAAAQABUAAgATABQAAAAPABQAAgASABQAAAAQABQAAgATABQAAAAPABMAAgASABQAAAAQABMAAgATABQAAAAPABIAAgASABQAAAAQABIAAgATABQAAAAPABEAAgASABQAAAAQABEAAgATABQAAAAPABAAAgASABQAAAAQABAAAgATABQAAAAPAA8AAgASABQAAAAQAA8AAgATABQAAAAPAA4AAgASABQAAAAQAA4AAgATABQAAAAPAA0AAgASABQAAAAQAA0AAgATABQAAAAPAAwAAgASABQAAAAQAAwAAgATABQAAAAPAAsAAgASABQAAAAQAAsAAgATABQAAAAPAAoAAgASABQAAAAQAAoAAgATABQAAAAPAAkAAgASABQAAAAQAAkAAgATABQAAAAPAAgAAgASABQAAAAQAAgAAgATABQAAAAPAAcAAgASABQAAAAQAAcAAgATABQAAAAPAAYAAgASABQAAAAQAAYAAgATABQAAAAPAAUAAgASABQAAAAQAAUAAgATABQAAAAPAAMAAgASABIAAAAPAAQAAgASABMAAAAQAAMAAgATABIAAAAQAAQAAgATABMAAAA=")
+tile_set = ExtResource("7_qtlsa")
+
+[node name="Потолок 2 для улуч_карт" type="TileMapLayer" parent="TileMap"]
+z_index = 2
+tile_set = ExtResource("7_qtlsa")
+
+[node name="Tishkov" parent="." instance=ExtResource("8_6sr6w")]
+position = Vector2(352, 201)
+
+[node name="Camera2D2" type="Camera2D" parent="Tishkov"]
+zoom = Vector2(2, 2)
+limit_left = -285
+limit_top = 0
+limit_right = 875
+limit_bottom = 780
+limit_smoothed = true
+editor_draw_limits = true
+
+[node name="LevelPerehod" parent="." instance=ExtResource("9_3mcb2")]
+z_index = 1
+position = Vector2(787, 764)
+scale = Vector2(3.06351, 1.88636)
+
+[connection signal="pressed" from="Pause panel/Menu/Menu/Continue_Button" to="Pause panel/Menu" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Pause panel/Menu/Menu/Options_Button" to="Pause panel/Menu" method="_on_options_button_pressed"]
+[connection signal="pressed" from="Pause panel/Menu/Menu/Exit_Button" to="Pause panel/Menu" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Pause panel/Menu/Options_menu/VBoxContainer2/Volume_Button" to="Pause panel/Menu" method="_on_volume_button_pressed"]
+[connection signal="pressed" from="Pause panel/Menu/Options_menu/Back_Button" to="Pause panel/Menu" method="_on_back_button_pressed"]
+[connection signal="pressed" from="Pause panel/Menu/Audio/Back_option_Button" to="Pause panel/Menu" method="_on_back_option_button_pressed"]
