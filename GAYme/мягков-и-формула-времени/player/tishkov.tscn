@@ -5,12 +5,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vp0k"]
 
-size = Vector2(57.4151, 11.215)
-
-[node name="Tishkov" type="CharacterBody2D"]
-z_index = 1
-texture_filter = 1
 size = Vector2(40.8499, 19.6129)
+
 
 [node name="Tishkov" type="CharacterBody2D" groups=["player"]]
 z_index = 1
