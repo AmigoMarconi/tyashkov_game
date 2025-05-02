@@ -1,9 +1,12 @@
-[gd_scene load_steps=20 format=3 uid="uid://b2wpybdh1ferk"]
+[gd_scene load_steps=23 format=3 uid="uid://b2wpybdh1ferk"]
 
 [ext_resource type="Script" uid="uid://bp7bfefpeu0jr" path="res://scripts/menu/menu.gd" id="1_037ec"]
 [ext_resource type="FontFile" uid="uid://d0jfh7mj4whuv" path="res://assets/alagard-12px-unicode.ttf" id="2_y1o0p"]
 [ext_resource type="PackedScene" uid="uid://ch3jfe1ssj3ob" path="res://scenes/menu/back_ground.tscn" id="3_r8yej"]
 [ext_resource type="Script" uid="uid://bhog1fu2i8why" path="res://scripts/audio_stream_player_2d.gd" id="4_3y2rt"]
+[ext_resource type="Script" uid="uid://bb4hwgr0x84d2" path="res://scenes/menu/master.gd" id="4_t0a87"]
+[ext_resource type="Script" uid="uid://bsekc1jg1is1f" path="res://scenes/menu/music.gd" id="4_y1o0p"]
+[ext_resource type="Script" uid="uid://cs2d1u6lr6dou" path="res://scenes/menu/sound_fx.gd" id="6_qo0fc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lti8b"]
 modulate_color = Color(0.423651, 0.423651, 0.423651, 1)
@@ -255,6 +258,7 @@ offset_right = 250.0
 offset_bottom = 62.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 8
 
 [node name="Volume_Button" type="Button" parent="Options_menu/VBoxContainer2"]
 layout_mode = 2
@@ -270,6 +274,21 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
 text = "Звук"
+
+[node name="Video_Button" type="Button" parent="Options_menu/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_y1o0p")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4ytvr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
+text = "Видео"
 
 [node name="Diff_Button2" type="Button" parent="Options_menu/VBoxContainer2"]
 layout_mode = 2
@@ -359,21 +378,111 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_vertical = 2
 max_value = 1.0
-step = 0.05
-value = 1.0
+step = 0.001
+script = ExtResource("4_t0a87")
+bus_name = "Master"
 
 [node name="Music" type="HSlider" parent="Audio/HBoxContainer/MusicVolumeSlider"]
 layout_mode = 2
 size_flags_vertical = 2
 max_value = 1.0
-step = 0.05
-value = 1.0
+step = 0.001
+script = ExtResource("4_y1o0p")
+bus_name = "Music"
 
 [node name="SoundFX" type="HSlider" parent="Audio/HBoxContainer/MusicVolumeSlider"]
 layout_mode = 2
 size_flags_vertical = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("6_qo0fc")
+bus_name = "Sound FX"
 
 [node name="Back_option_Button" type="Button" parent="Audio"]
+layout_mode = 0
+offset_left = -48.0
+offset_top = 78.0
+offset_right = 40.0
+offset_bottom = 120.0
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_y1o0p")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_70i5f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
+text = "Назад"
+
+[node name="Video" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Video"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.0
+offset_top = -46.0
+offset_right = 97.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="labels" type="VBoxContainer" parent="Video/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_stretch_ratio = 1.08
+
+[node name="Fullscreen" type="Label" parent="Video/HBoxContainer/labels"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Полный экран"
+
+[node name="Borderless" type="Label" parent="Video/HBoxContainer/labels"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 20
+text = "Рамки"
+
+[node name="VSync" type="Label" parent="Video/HBoxContainer/labels"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 20
+text = "Вертикальная синхронизация"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Video/HBoxContainer"]
+layout_mode = 2
+
+[node name="Fullscreen" type="CheckBox" parent="Video/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Borderless" type="CheckBox" parent="Video/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="Video/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+selected = 1
+item_count = 3
+popup/item_0/text = "Отключить"
+popup/item_0/id = 0
+popup/item_1/text = "Включить"
+popup/item_1/id = 1
+popup/item_2/text = "Адаптивный"
+popup/item_2/id = 2
+
+[node name="Back_video_Button" type="Button" parent="Video"]
 layout_mode = 0
 offset_left = -48.0
 offset_top = 78.0
@@ -400,8 +509,13 @@ script = ExtResource("4_3y2rt")
 [connection signal="pressed" from="Menu/Options_Button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Menu/Exit_Button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Options_menu/VBoxContainer2/Volume_Button" to="." method="_on_volume_button_pressed"]
+[connection signal="pressed" from="Options_menu/VBoxContainer2/Video_Button" to="." method="_on_video_button_pressed"]
 [connection signal="pressed" from="Options_menu/Back_Button" to="." method="_on_back_button_pressed"]
 [connection signal="value_changed" from="Audio/HBoxContainer/MusicVolumeSlider/Master" to="." method="_on_master_value_changed"]
 [connection signal="value_changed" from="Audio/HBoxContainer/MusicVolumeSlider/Music" to="." method="_on_music_value_changed"]
 [connection signal="value_changed" from="Audio/HBoxContainer/MusicVolumeSlider/SoundFX" to="." method="_on_sound_fx_value_changed"]
 [connection signal="pressed" from="Audio/Back_option_Button" to="." method="_on_back_option_button_pressed"]
+[connection signal="toggled" from="Video/HBoxContainer/VBoxContainer/Fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="toggled" from="Video/HBoxContainer/VBoxContainer/Borderless" to="." method="_on_borderless_toggled"]
+[connection signal="item_selected" from="Video/HBoxContainer/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="Video/Back_video_Button" to="." method="_on_back_video_button_pressed"]
