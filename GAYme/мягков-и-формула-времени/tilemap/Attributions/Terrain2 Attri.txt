@@ -152,5 +152,3 @@ Castle work:
  - castle_outside.png
  - castlefloors_outside.png
  - castle_lightsources.png
-
-

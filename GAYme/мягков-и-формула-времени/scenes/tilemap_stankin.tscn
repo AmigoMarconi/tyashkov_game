@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcisf57qwj2nk"]
+
+[ext_resource type="TileSet" uid="uid://ici8ft3ejb4w" path="res://assets/TileSTANKIN.tres" id="1_p235v"]
+
+[node name="TilemapStankin" type="TileMap"]
+tile_set = ExtResource("1_p235v")
+format = 2

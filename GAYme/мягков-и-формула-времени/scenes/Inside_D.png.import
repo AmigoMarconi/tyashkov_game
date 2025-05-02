@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjt32jwlgiaxr"
-path="res://.godot/imported/Inside_D.png-00df54f9b03038c1e97203aae3b6cf39.ctex"
+path="res://.godot/imported/Inside_D.png-971c729c10fcb2a0a89f90fbf4aeb375.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilemap/STANKIN/Inside_D.png"
-dest_files=["res://.godot/imported/Inside_D.png-00df54f9b03038c1e97203aae3b6cf39.ctex"]
+source_file="res://scenes/Inside_D.png"
+dest_files=["res://.godot/imported/Inside_D.png-971c729c10fcb2a0a89f90fbf4aeb375.ctex"]
 
 [params]
 
