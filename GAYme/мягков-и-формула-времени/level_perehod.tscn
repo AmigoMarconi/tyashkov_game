@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://33or5divfio7" path="res://scripts/LevelPerehod.gd" id="1_p280s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4c1q"]
+resource_local_to_scene = true
 size = Vector2(16, 16)
 
 [node name="LevelPerehod" type="Area2D"]
 collision_layer = 0
 monitorable = false
 script = ExtResource("1_p280s")
+level = "<null>"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s4c1q")
