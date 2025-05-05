@@ -4,12 +4,11 @@
 [ext_resource type="Script" uid="uid://canuw08ebrojg" path="res://player/scripts/tishkov.gd" id="1_f7arj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vp0k"]
-
 size = Vector2(40.8499, 19.6129)
-
 
 [node name="Tishkov" type="CharacterBody2D" groups=["player"]]
 z_index = 1
+y_sort_enabled = true
 texture_filter = 1
 collision_layer = 2
 collision_mask = 16
@@ -27,3 +26,6 @@ texture_filter = 1
 position = Vector2(0, -29)
 scale = Vector2(0.0557507, 0.0501181)
 texture = ExtResource("1_cjyu3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)

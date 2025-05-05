@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck4eya3cat7kb"]
+
+[ext_resource type="Texture2D" uid="uid://yoqp18qo0wgc" path="res://player/Sprite/photo_2025-03-15_12-46-07-Photoroom.png" id="1_8w8il"]
+[ext_resource type="Script" uid="uid://k1n81n6gux0n" path="res://player_spawn.gd" id="1_m6icb"]
+
+[node name="PlayerSpawn" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_m6icb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.00392157, 1, 0, 0.729412)
+position = Vector2(0, -31)
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("1_8w8il")

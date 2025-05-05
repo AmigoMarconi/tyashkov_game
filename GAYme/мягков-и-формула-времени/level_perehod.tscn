@@ -8,10 +8,12 @@ size = Vector2(16, 16)
 
 [node name="LevelPerehod" type="Area2D"]
 collision_layer = 0
+collision_mask = 2
 monitorable = false
 script = ExtResource("1_p280s")
 level = "<null>"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 0)
 shape = SubResource("RectangleShape2D_s4c1q")
 debug_color = Color(0.902304, 0.000152093, 0.75673, 0.42)

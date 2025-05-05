@@ -1,12 +1,13 @@
-[gd_scene load_steps=26 format=4 uid="uid://34758hxq4qtn"]
+[gd_scene load_steps=27 format=4 uid="uid://34758hxq4qtn"]
 
+[ext_resource type="Script" uid="uid://dqryh73xxtwyu" path="res://scripts/level.gd" id="1_vtaks"]
 [ext_resource type="Script" uid="uid://bp7bfefpeu0jr" path="res://scripts/menu/menu.gd" id="1_yqjtg"]
 [ext_resource type="FontFile" uid="uid://d0jfh7mj4whuv" path="res://assets/alagard-12px-unicode.ttf" id="2_lnu2h"]
 [ext_resource type="Script" uid="uid://bb4hwgr0x84d2" path="res://scenes/menu/master.gd" id="3_p57ef"]
 [ext_resource type="Script" uid="uid://bsekc1jg1is1f" path="res://scenes/menu/music.gd" id="4_u5sy4"]
 [ext_resource type="Script" uid="uid://cs2d1u6lr6dou" path="res://scenes/menu/sound_fx.gd" id="5_gee14"]
 [ext_resource type="TileSet" uid="uid://ici8ft3ejb4w" path="res://assets/TileSTANKIN.tres" id="7_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://b3womgd2wrjfc" path="res://player/tishkov.tscn" id="8_gee14"]
+[ext_resource type="PackedScene" uid="uid://ck4eya3cat7kb" path="res://scenes/PlayerSpawn.tscn" id="8_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://bw11jmnsm36uq" path="res://props.tscn" id="8_vtaks"]
 [ext_resource type="PackedScene" uid="uid://bd4kyx8rmfcc8" path="res://level_perehod.tscn" id="9_0tnpc"]
 
@@ -115,6 +116,7 @@ shadow_size = 5
 
 [node name="mat_cabinet" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_vtaks")
 
 [node name="Pause panel" type="CanvasLayer" parent="."]
 
@@ -397,24 +399,17 @@ text = "Назад"
 z_index = 2
 position = Vector2(326, 278)
 
-[node name="Tishkov" parent="." instance=ExtResource("8_gee14")]
-position = Vector2(-40, 737)
-
-[node name="Camera2D2" type="Camera2D" parent="Tishkov"]
-zoom = Vector2(2, 2)
-limit_left = -210
-limit_top = 0
-limit_right = 875
-limit_bottom = 800
-limit_smoothed = true
-editor_draw_limits = true
-
 [node name="LevelPerehod" parent="." instance=ExtResource("9_0tnpc")]
 z_index = 1
-position = Vector2(826, 800)
+position = Vector2(871, 799)
 scale = Vector2(3.06351, 1.88636)
+level = "uid://1unars88n1n2"
+target_transition_area = "LevelPerehod"
 size = 1
-side = 2
+side = 3
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("8_0tnpc")]
+position = Vector2(499, 370)
 
 [node name="Карта" type="Node2D" parent="."]
 y_sort_enabled = true

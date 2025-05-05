@@ -18,8 +18,20 @@ func toggle():
 #ПЕРЕХОД ГЛАВНОГО МЕНЮ 
 func _on_start_button_pressed() -> void:
 	toggle()
+	
+	#toggle()
+	#get_tree().change_scene_to_file("res://scenes/ladder_room.tscn")
+	
+	# 1. Загружаем уровень (где стоит playerSpawn)
+	var level_scene = load("res://scenes/game.tscn").instantiate()
+	# 2. Находим точку спавна на уровне
+	var spawn_point = level_scene.find_child("PlayerSpawn*", true, false) 
+	# 3. Передаём позицию спавна в PlayerManager
+	if spawn_point:
+		PlayerManager.set_player_position(spawn_point.global_position)
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
-
+	
+	
 func _on_options_button_pressed() -> void:
 	show_and_hide(options, menu)
 
