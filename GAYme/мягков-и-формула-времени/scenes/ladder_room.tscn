@@ -114,7 +114,6 @@ shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
 shadow_size = 5
 
 [node name="Ladder_room" type="Node2D"]
-position = Vector2(-144, 4)
 script = ExtResource("1_vs2oe")
 
 [node name="Pause panel" type="CanvasLayer" parent="."]
@@ -420,17 +419,15 @@ tile_set = ExtResource("7_qtlsa")
 
 [node name="Y-sort" type="Node2D" parent="."]
 y_sort_enabled = true
-position = Vector2(-74, -10)
 
 [node name="Стены" type="TileMapLayer" parent="Y-sort"]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(74, 10)
-tile_map_data = PackedByteArray("AAAPACAAAgATABgAAAATACAAAgATABgAAAAXACAAAgATABgAAAAbACAAAgATABgAAAAfACAAAgATABgAAAAjACAAAgATABgAAAAnACAAAgATABgAAAArACAAAgATABgAAAAvACAAAgATABgAAAAxACAAAgAXABgAAAANACAAAgASABgAAAA=")
+tile_map_data = PackedByteArray("AAAxACAAAgAXABgAAAAvACAAAgATABgAAAArACAAAgATABgAAAAnACAAAgATABgAAAAjACAAAgATABgAAAAfACAAAgATABgAAAAbACAAAgATABgAAAAXACAAAgATABgAAAATACAAAgATABgAAAAPACAAAgATABgAAAANACAAAgASABgAAAA=")
 tile_set = ExtResource("7_qtlsa")
 
 [node name="LevelPerehod" parent="." instance=ExtResource("8_4yo1t")]
-position = Vector2(659, 112)
+position = Vector2(661, 134)
 scale = Vector2(5.87691, 2.27424)
 level = "uid://34758hxq4qtn"
 target_transition_area = "LevelPerehod"

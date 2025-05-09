@@ -23,6 +23,7 @@ buses/default_bus_layout=""
 LevelMeneger="*res://00_GLOBAL/LevelMeneger.gd"
 Interaction_manager="*res://interaction/interaction_manager.tscn"
 PlayerManager="*res://00_GLOBAL/global_player.gd"
+SceneTransition="*res://GUI/scene_transition/scene_transition.tscn"
 
 [display]
 

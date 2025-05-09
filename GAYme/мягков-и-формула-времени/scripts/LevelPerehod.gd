@@ -87,5 +87,5 @@ func _update_area() -> void:
 	collision_shape.position = new_position
 
 func _snap_to_grid() -> void:
-	position.x = round(position.x / 16) *16
-	position.y = round(position.x / 16) * 16
+	position.x = round(position.x / 8) * 8
+	position.y = round(position.x / 8) * 8

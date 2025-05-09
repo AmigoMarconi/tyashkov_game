@@ -401,7 +401,7 @@ position = Vector2(326, 278)
 
 [node name="LevelPerehod" parent="." instance=ExtResource("9_0tnpc")]
 z_index = 1
-position = Vector2(871, 799)
+position = Vector2(872, 800)
 scale = Vector2(3.06351, 1.88636)
 level = "uid://1unars88n1n2"
 target_transition_area = "LevelPerehod"

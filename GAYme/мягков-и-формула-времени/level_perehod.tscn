@@ -4,7 +4,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4c1q"]
 resource_local_to_scene = true
-size = Vector2(16, 16)
+size = Vector2(16, 32)
 
 [node name="LevelPerehod" type="Area2D"]
 collision_layer = 0
