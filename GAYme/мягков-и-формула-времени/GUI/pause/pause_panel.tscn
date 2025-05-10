@@ -1,0 +1,437 @@
+[gd_scene load_steps=22 format=3 uid="uid://bukw64hv3pj5x"]
+
+[ext_resource type="Script" uid="uid://bkylfnv68xy4w" path="res://GUI/pause/pause.gd" id="1_h7vp8"]
+[ext_resource type="FontFile" uid="uid://d0jfh7mj4whuv" path="res://assets/alagard-12px-unicode.ttf" id="3_di2u6"]
+[ext_resource type="Script" uid="uid://bb4hwgr0x84d2" path="res://scenes/menu/master.gd" id="4_hfun2"]
+[ext_resource type="Script" uid="uid://bsekc1jg1is1f" path="res://scenes/menu/music.gd" id="5_wjdw8"]
+[ext_resource type="Script" uid="uid://cs2d1u6lr6dou" path="res://scenes/menu/sound_fx.gd" id="6_peo58"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g7wft"]
+modulate_color = Color(0.423651, 0.423651, 0.423651, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ggtbi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_suyrq"]
+bg_color = Color(0.29219, 0.29219, 0.29219, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kqr0k"]
+bg_color = Color(0.834614, 0.834614, 0.834614, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_urpft"]
+bg_color = Color(0.509286, 0.509286, 0.509286, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_degd5"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h4jqv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4dvw"]
+bg_color = Color(0.834614, 0.834614, 0.834614, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xewtn"]
+bg_color = Color(0.509286, 0.509286, 0.509286, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bp62j"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a3tdf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bk7qs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3obep"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5sk16"]
+bg_color = Color(0.834614, 0.834614, 0.834614, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hghh"]
+bg_color = Color(0.509286, 0.509286, 0.509286, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ies60"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[node name="Pause panel" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_h7vp8")
+
+[node name="pause" type="Control" parent="."]
+process_mode = 3
+z_index = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_g7wft")
+
+[node name="Menu" type="VBoxContainer" parent="pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -311.0
+offset_top = -121.0
+offset_right = 318.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -23
+
+[node name="Continue_Button" type="Button" parent="pause/Menu"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_disabled_color = Color(0.129558, 0.129559, 0.129558, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_di2u6")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ggtbi")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_suyrq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kqr0k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_urpft")
+theme_override_styles/normal = SubResource("StyleBoxFlat_degd5")
+text = "Продолжить"
+
+[node name="Save_Button" type="Button" parent="pause/Menu"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_disabled_color = Color(0.129558, 0.129559, 0.129558, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_di2u6")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ggtbi")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_suyrq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kqr0k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_urpft")
+theme_override_styles/normal = SubResource("StyleBoxFlat_degd5")
+text = "Сохранить игру"
+
+[node name="Load_Button" type="Button" parent="pause/Menu"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_disabled_color = Color(0.129558, 0.129559, 0.129558, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_di2u6")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ggtbi")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_suyrq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kqr0k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_urpft")
+theme_override_styles/normal = SubResource("StyleBoxFlat_degd5")
+text = "Загрузить игру"
+
+[node name="Options_Button" type="Button" parent="pause/Menu"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_di2u6")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ggtbi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kqr0k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_urpft")
+theme_override_styles/normal = SubResource("StyleBoxFlat_degd5")
+text = "Настройки"
+
+[node name="Exit_Button" type="Button" parent="pause/Menu"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_di2u6")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ggtbi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kqr0k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_urpft")
+theme_override_styles/normal = SubResource("StyleBoxFlat_degd5")
+text = "Выход"
+
+[node name="Label" type="Label" parent="pause"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.0
+offset_top = -213.0
+offset_right = 87.0
+offset_bottom = -137.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -15
+theme_override_constants/shadow_offset_y = 13
+theme_override_fonts/font = ExtResource("3_di2u6")
+theme_override_font_sizes/font_size = 55
+text = "ПАУЗА"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options_menu" type="Control" parent="pause"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="pause/Options_menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -251.0
+offset_top = -84.0
+offset_right = 250.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Volume_Button" type="Button" parent="pause/Options_menu/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_di2u6")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h4jqv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f4dvw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xewtn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bp62j")
+text = "Звук"
+
+[node name="Diff_Button2" type="Button" parent="pause/Options_menu/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_di2u6")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a3tdf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f4dvw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xewtn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bp62j")
+text = "Сложность"
+
+[node name="Back_Button" type="Button" parent="pause/Options_menu"]
+layout_mode = 2
+offset_left = -247.0
+offset_top = 137.0
+offset_right = 253.0
+offset_bottom = 179.0
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_di2u6")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bk7qs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f4dvw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xewtn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bp62j")
+text = "Назад"
+
+[node name="Audio" type="Control" parent="pause"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="pause/Audio"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.5
+offset_top = -46.0
+offset_right = 203.5
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="labels" type="VBoxContainer" parent="pause/Audio/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.08
+
+[node name="Master" type="Label" parent="pause/Audio/HBoxContainer/labels"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_di2u6")
+theme_override_font_sizes/font_size = 20
+text = "Звук"
+
+[node name="Music" type="Label" parent="pause/Audio/HBoxContainer/labels"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_di2u6")
+theme_override_font_sizes/font_size = 20
+text = "Музыка"
+
+[node name="SoundFX" type="Label" parent="pause/Audio/HBoxContainer/labels"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("3_di2u6")
+theme_override_font_sizes/font_size = 20
+text = "Звуковые эффекты"
+
+[node name="MusicVolumeSlider" type="VBoxContainer" parent="pause/Audio/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Master" type="HSlider" parent="pause/Audio/HBoxContainer/MusicVolumeSlider"]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("4_hfun2")
+bus_name = "Master"
+
+[node name="Music" type="HSlider" parent="pause/Audio/HBoxContainer/MusicVolumeSlider"]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("5_wjdw8")
+bus_name = "Music"
+
+[node name="SoundFX" type="HSlider" parent="pause/Audio/HBoxContainer/MusicVolumeSlider"]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("6_peo58")
+bus_name = "Sound FX"
+
+[node name="Back_option_Button" type="Button" parent="pause/Audio"]
+layout_mode = 0
+offset_left = -145.0
+offset_top = 90.0
+offset_right = 137.0
+offset_bottom = 132.0
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_di2u6")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3obep")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5sk16")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8hghh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ies60")
+text = "Назад"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.339278, 0.318557, 0.292924, 0.223529)
+
+[connection signal="pressed" from="pause/Menu/Continue_Button" to="pause" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="pause/Menu/Save_Button" to="pause" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="pause/Menu/Load_Button" to="pause" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="pause/Menu/Options_Button" to="pause" method="_on_options_button_pressed"]
+[connection signal="pressed" from="pause/Menu/Exit_Button" to="pause" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="pause/Options_menu/VBoxContainer2/Volume_Button" to="pause" method="_on_volume_button_pressed"]
+[connection signal="pressed" from="pause/Options_menu/Back_Button" to="pause" method="_on_back_button_pressed"]
+[connection signal="pressed" from="pause/Audio/Back_option_Button" to="pause" method="_on_back_option_button_pressed"]
