@@ -4,23 +4,25 @@
 [ext_resource type="Script" uid="uid://btopeaw3ka5nd" path="res://scripts/menu/back_ground.gd" id="1_48fm6"]
 [ext_resource type="Texture2D" uid="uid://cjqno4j0ycr62" path="res://assets/background/Small 512x512/Purple Nebula/Purple_Nebula_05-512x512.png" id="5_qvoin"]
 
-[node name="BackGround" type="ParallaxBackground"]
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="BackGround" type="ParallaxBackground" parent="."]
 script = ExtResource("1_48fm6")
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BackGround"]
 motion_scale = Vector2(0.3, 1)
 motion_mirroring = Vector2(1209, 0)
 
-[node name="PurpleNebula01-512x512" type="Sprite2D" parent="ParallaxLayer"]
+[node name="PurpleNebula01-512x512" type="Sprite2D" parent="BackGround/ParallaxLayer"]
 position = Vector2(600, 324)
 scale = Vector2(2.36133, 1.38477)
 texture = ExtResource("1_1urn4")
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="BackGround"]
 motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(1297, 0)
 
-[node name="PurpleNebula05-512x512" type="Sprite2D" parent="ParallaxLayer2"]
+[node name="PurpleNebula05-512x512" type="Sprite2D" parent="BackGround/ParallaxLayer2"]
 modulate = Color(1, 1, 1, 0.737255)
 position = Vector2(612, 352)
 scale = Vector2(2.5332, 1.49902)

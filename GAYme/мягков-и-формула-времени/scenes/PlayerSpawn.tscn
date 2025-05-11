@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ck4eya3cat7kb"]
 
 [ext_resource type="Texture2D" uid="uid://yoqp18qo0wgc" path="res://player/Sprite/photo_2025-03-15_12-46-07-Photoroom.png" id="1_8w8il"]
-[ext_resource type="Script" uid="uid://k1n81n6gux0n" path="res://player_spawn.gd" id="1_m6icb"]
+[ext_resource type="Script" uid="uid://k1n81n6gux0n" path="res://scripts/player_spawn.gd" id="1_m6icb"]
 
 [node name="PlayerSpawn" type="Node2D"]
 z_index = 1

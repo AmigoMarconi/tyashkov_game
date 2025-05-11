@@ -28,8 +28,11 @@ func save_game() ->void:
 		#print("gameSAVE")
 	else: push_error("Failed to save game: ", FileAccess.get_open_error())
 
+func get_save_file() -> FileAccess:
+	return FileAccess.open( SAVE_PATH + "save.sav", FileAccess.READ)
+
 func load_game() -> void:
-	var file := FileAccess.open( SAVE_PATH + "save.sav", FileAccess.READ)
+	var file := get_save_file()
 	if file:
 		var json := JSON.new()
 		var parse_result = json.parse(file.get_line())

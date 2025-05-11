@@ -1,12 +1,16 @@
-[gd_scene load_steps=23 format=3 uid="uid://b2wpybdh1ferk"]
+[gd_scene load_steps=27 format=3 uid="uid://b2wpybdh1ferk"]
 
 [ext_resource type="Script" uid="uid://bp7bfefpeu0jr" path="res://scripts/menu/menu.gd" id="1_037ec"]
+[ext_resource type="AudioStream" uid="uid://c7uun3ipgkdqv" path="res://sounds/Untitled.mp3" id="2_f2fum"]
 [ext_resource type="FontFile" uid="uid://d0jfh7mj4whuv" path="res://assets/alagard-12px-unicode.ttf" id="2_y1o0p"]
+[ext_resource type="AudioStream" uid="uid://4uc0d81w3umk" path="res://sounds/menu_focus.wav" id="3_kaijy"]
 [ext_resource type="PackedScene" uid="uid://ch3jfe1ssj3ob" path="res://scenes/menu/back_ground.tscn" id="3_r8yej"]
 [ext_resource type="Script" uid="uid://bhog1fu2i8why" path="res://scripts/audio_stream_player_2d.gd" id="4_3y2rt"]
 [ext_resource type="Script" uid="uid://bb4hwgr0x84d2" path="res://scenes/menu/master.gd" id="4_t0a87"]
 [ext_resource type="Script" uid="uid://bsekc1jg1is1f" path="res://scenes/menu/music.gd" id="4_y1o0p"]
+[ext_resource type="AudioStream" uid="uid://c7hdjswp0catm" path="res://sounds/menu_select.wav" id="4_y4i35"]
 [ext_resource type="Script" uid="uid://cs2d1u6lr6dou" path="res://scenes/menu/sound_fx.gd" id="6_qo0fc"]
+[ext_resource type="PackedScene" uid="uid://ck4eya3cat7kb" path="res://scenes/PlayerSpawn.tscn" id="7_t0a87"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lti8b"]
 modulate_color = Color(0.423651, 0.423651, 0.423651, 1)
@@ -120,6 +124,9 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_037ec")
+music = ExtResource("2_f2fum")
+button_focus_audio = ExtResource("3_kaijy")
+button_press_audio = ExtResource("4_y4i35")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -162,7 +169,6 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_con2f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mae5d")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4hy44")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lti8b")
-disabled = true
 text = "Продолжить"
 
 [node name="Start_Button" type="Button" parent="Menu"]
@@ -233,8 +239,6 @@ text = "Тяжков
 формула времени"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="BackGround" parent="." instance=ExtResource("3_r8yej")]
 
 [node name="Options_menu" type="Control" parent="."]
 visible = false
@@ -501,10 +505,21 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
 text = "Назад"
 
+[node name="PlayerSpawn" parent="." instance=ExtResource("7_t0a87")]
+position = Vector2(5, 38)
+
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 script = ExtResource("4_3y2rt")
 
-[connection signal="pressed" from="Menu/Continue_Button" to="." method="_on_exit_button_pressed"]
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BackGround" parent="CanvasLayer" instance=ExtResource("3_r8yej")]
+process_mode = 3
+
 [connection signal="pressed" from="Menu/Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Menu/Options_Button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Menu/Exit_Button" to="." method="_on_exit_button_pressed"]
