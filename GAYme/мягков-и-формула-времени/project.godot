@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 
 buses/default_bus_layout=""
 
+[autoload]
+
+Persistence="*res://Persistence.gd"
+
 [display]
 
 window/stretch/mode="viewport"

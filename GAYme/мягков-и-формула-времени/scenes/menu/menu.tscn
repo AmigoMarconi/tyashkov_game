@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b2wpybdh1ferk"]
+[gd_scene load_steps=24 format=3 uid="uid://b2wpybdh1ferk"]
 
 [ext_resource type="Script" uid="uid://bp7bfefpeu0jr" path="res://scripts/menu/menu.gd" id="1_037ec"]
 [ext_resource type="FontFile" uid="uid://d0jfh7mj4whuv" path="res://assets/alagard-12px-unicode.ttf" id="2_y1o0p"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bb4hwgr0x84d2" path="res://scenes/menu/master.gd" id="4_t0a87"]
 [ext_resource type="Script" uid="uid://bsekc1jg1is1f" path="res://scenes/menu/music.gd" id="4_y1o0p"]
 [ext_resource type="Script" uid="uid://cs2d1u6lr6dou" path="res://scenes/menu/sound_fx.gd" id="6_qo0fc"]
+[ext_resource type="Script" uid="uid://b3pn8efsuhiu7" path="res://scenes/menu/video.gd" id="7_t0a87"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lti8b"]
 modulate_color = Color(0.423651, 0.423651, 0.423651, 1)
@@ -375,6 +376,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Master" type="HSlider" parent="Audio/HBoxContainer/MusicVolumeSlider"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 2
 max_value = 1.0
@@ -383,6 +385,7 @@ script = ExtResource("4_t0a87")
 bus_name = "Master"
 
 [node name="Music" type="HSlider" parent="Audio/HBoxContainer/MusicVolumeSlider"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 2
 max_value = 1.0
@@ -391,6 +394,7 @@ script = ExtResource("4_y1o0p")
 bus_name = "Music"
 
 [node name="SoundFX" type="HSlider" parent="Audio/HBoxContainer/MusicVolumeSlider"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 2
 max_value = 1.0
@@ -425,6 +429,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("7_t0a87")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Video"]
 layout_mode = 1
@@ -466,12 +471,15 @@ text = "Вертикальная синхронизация"
 layout_mode = 2
 
 [node name="Fullscreen" type="CheckBox" parent="Video/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="Borderless" type="CheckBox" parent="Video/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="Video/HBoxContainer/VBoxContainer"]
+[node name="Vsync" type="OptionButton" parent="Video/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 selected = 1
 item_count = 3
@@ -483,6 +491,7 @@ popup/item_2/text = "Адаптивный"
 popup/item_2/id = 2
 
 [node name="Back_video_Button" type="Button" parent="Video"]
+layout_mode = 0
 offset_left = -48.0
 offset_top = 78.0
 offset_right = 40.0
@@ -516,5 +525,5 @@ script = ExtResource("4_3y2rt")
 [connection signal="pressed" from="Audio/Back_option_Button" to="." method="_on_back_option_button_pressed"]
 [connection signal="toggled" from="Video/HBoxContainer/VBoxContainer/Fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="toggled" from="Video/HBoxContainer/VBoxContainer/Borderless" to="." method="_on_borderless_toggled"]
-[connection signal="item_selected" from="Video/HBoxContainer/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="Video/HBoxContainer/VBoxContainer/Vsync" to="." method="_on_vsync_item_selected"]
 [connection signal="pressed" from="Video/Back_video_Button" to="." method="_on_back_video_button_pressed"]

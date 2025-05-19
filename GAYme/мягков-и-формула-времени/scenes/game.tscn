@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://34758hxq4qtn"]
+[gd_scene load_steps=31 format=3 uid="uid://34758hxq4qtn"]
 
 [ext_resource type="Script" uid="uid://bp7bfefpeu0jr" path="res://scripts/menu/menu.gd" id="1_yqjtg"]
 [ext_resource type="FontFile" uid="uid://d0jfh7mj4whuv" path="res://assets/alagard-12px-unicode.ttf" id="2_lnu2h"]
@@ -79,6 +79,35 @@ shadow_size = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i6lef"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p57ef"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5sy4"]
+bg_color = Color(0.834614, 0.834614, 0.834614, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gee14"]
+bg_color = Color(0.509286, 0.509286, 0.509286, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tnpc"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_70i5f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0tnpc"]
@@ -102,6 +131,35 @@ shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
 shadow_size = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dinhu"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vtaks"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvuet"]
+bg_color = Color(0.834614, 0.834614, 0.834614, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trtic"]
+bg_color = Color(0.509286, 0.509286, 0.509286, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir15t"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -277,12 +335,27 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
 text = "Сложность"
 
+[node name="Video_Button" type="Button" parent="Pause panel/Menu/Options_menu/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_lnu2h")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p57ef")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u5sy4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gee14")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0tnpc")
+text = "Видео"
+
 [node name="Back_Button" type="Button" parent="Pause panel/Menu/Options_menu"]
 layout_mode = 2
 offset_left = -250.0
-offset_top = 158.0
+offset_top = 145.0
 offset_right = 250.0
-offset_bottom = 200.0
+offset_bottom = 187.0
 size_flags_vertical = 6
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -387,6 +460,90 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_0tnpc")
 theme_override_styles/hover = SubResource("StyleBoxFlat_vtaks")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kvpfn")
 theme_override_styles/normal = SubResource("StyleBoxFlat_dinhu")
+text = "Назад"
+
+[node name="Video" type="Control" parent="Pause panel/Menu"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Pause panel/Menu/Video"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.0
+offset_top = -46.0
+offset_right = 97.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="labels" type="VBoxContainer" parent="Pause panel/Menu/Video/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_stretch_ratio = 1.08
+
+[node name="Fullscreen" type="Label" parent="Pause panel/Menu/Video/HBoxContainer/labels"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Полный экран"
+
+[node name="Borderless" type="Label" parent="Pause panel/Menu/Video/HBoxContainer/labels"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 20
+text = "Рамки"
+
+[node name="VSync" type="Label" parent="Pause panel/Menu/Video/HBoxContainer/labels"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 20
+text = "Вертикальная синхронизация"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause panel/Menu/Video/HBoxContainer"]
+layout_mode = 2
+
+[node name="Fullscreen" type="CheckBox" parent="Pause panel/Menu/Video/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Borderless" type="CheckBox" parent="Pause panel/Menu/Video/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="Pause panel/Menu/Video/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+selected = 1
+item_count = 3
+popup/item_0/text = "Отключить"
+popup/item_0/id = 0
+popup/item_1/text = "Включить"
+popup/item_1/id = 1
+popup/item_2/text = "Адаптивный"
+popup/item_2/id = 2
+
+[node name="Back_video_Button" type="Button" parent="Pause panel/Menu/Video"]
+layout_mode = 0
+offset_left = -48.0
+offset_top = 78.0
+offset_right = 40.0
+offset_bottom = 120.0
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_lnu2h")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vtaks")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kvuet")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_trtic")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ir15t")
 text = "Назад"
 
 [node name="TileMap" parent="." instance=ExtResource("3_lnu2h")]
