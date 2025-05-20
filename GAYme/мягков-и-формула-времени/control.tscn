@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqhw0nj7ngvvo"]
+
+[ext_resource type="Script" uid="uid://dy3ntfuw60vcg" path="res://button.gd" id="1_0fbet"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 274.0
+offset_bottom = 142.0
+text = "цкаиав"
+script = ExtResource("1_0fbet")

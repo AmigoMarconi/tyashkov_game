@@ -269,7 +269,7 @@ anchor_bottom = 0.5
 offset_left = -251.0
 offset_top = -84.0
 offset_right = 250.0
-offset_bottom = 85.0
+offset_bottom = 34.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -306,9 +306,9 @@ text = "Сложность"
 [node name="Back_Button" type="Button" parent="pause/Options_menu"]
 layout_mode = 2
 offset_left = -247.0
-offset_top = 137.0
+offset_top = 75.0
 offset_right = 253.0
-offset_bottom = 179.0
+offset_bottom = 117.0
 size_flags_vertical = 6
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -429,8 +429,8 @@ color = Color(0.339278, 0.318557, 0.292924, 0.223529)
 [connection signal="pressed" from="pause/Menu/Continue_Button" to="pause" method="_on_continue_button_pressed"]
 [connection signal="pressed" from="pause/Menu/Save_Button" to="pause" method="_on_continue_button_pressed"]
 [connection signal="pressed" from="pause/Menu/Load_Button" to="pause" method="_on_continue_button_pressed"]
-[connection signal="pressed" from="pause/Menu/Options_Button" to="pause" method="_on_options_button_pressed"]
-[connection signal="pressed" from="pause/Menu/Exit_Button" to="pause" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="pause/Menu/Options_Button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="pause/Menu/Exit_Button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="pause/Options_menu/VBoxContainer2/Volume_Button" to="pause" method="_on_volume_button_pressed"]
-[connection signal="pressed" from="pause/Options_menu/Back_Button" to="pause" method="_on_back_button_pressed"]
+[connection signal="pressed" from="pause/Options_menu/Back_Button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="pause/Audio/Back_option_Button" to="pause" method="_on_back_option_button_pressed"]

@@ -105,6 +105,9 @@ const START_LEVEL : String = "res://scenes/game.tscn"
 @onready var button_exit: Button = $Menu/Exit_Button
 @onready var button_back: Button = $Options_menu/Back_Button
 
+@onready var fullscreen_toggle: CheckBox = %Fullscreen
+@onready var borderless_toggle: CheckBox = %Borderless
+
 func _ready() -> void:
 	
 	get_tree().paused = true
@@ -112,7 +115,10 @@ func _ready() -> void:
 	Interaction_manager.visible = false
 	PlayerManager.player.visible = false
 	PausePanel.process_mode = Node.PROCESS_MODE_DISABLED
-
+	
+	# Инициализация настроек окна
+	init_window_settings()
+	
 	# Проверка наличия сохранений
 	if SaveManager.get_save_file() == null:
 		button_continue.disabled = true
@@ -127,6 +133,31 @@ func _ready() -> void:
 	button_new.focus_entered.connect(play_audio.bind(button_focus_audio))
 	button_continue.focus_entered.connect(play_audio.bind(button_focus_audio))
 	LevelMeneger.level_load_started.connect(exit_title_screen)
+	
+# Инициализация настроек окна
+func init_window_settings():
+	# Устанавливаем текущее состояние оконного режима
+	var current_mode = DisplayServer.window_get_mode()
+	fullscreen_toggle.button_pressed = (current_mode == DisplayServer.WINDOW_MODE_FULLSCREEN)
+	
+	# Устанавливаем текущее состояние рамок
+	var is_borderless = DisplayServer.window_get_flag(DisplayServer.WINDOW_FLAG_BORDERLESS)
+	borderless_toggle.button_pressed = is_borderless
+	# Подключаем сигналы
+	fullscreen_toggle.toggled.connect(_on_fullscreen_toggled)
+	borderless_toggle.toggled.connect(_on_borderless_toggled)
+
+# Функции управления окном
+func _on_fullscreen_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		play_audio(button_press_audio)
+
+func _on_borderless_toggled(toggled_on: bool) -> void:
+	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, toggled_on)
+	play_audio(button_press_audio)
 
 func start_game() -> void:
 	play_audio(button_press_audio)
@@ -163,7 +194,7 @@ func _on_options_button_pressed() -> void:
 
 func _on_back_button_pressed() -> void:
 	show_and_hide(menu, options_menu)
-	button_new.grab_focus()
+	
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()
@@ -175,3 +206,16 @@ func _on_master_value_changed(value: float) -> void:
 func play_audio(_a : AudioStream) -> void:
 	button_sound.stream = _a
 	button_sound.play()
+
+func _on_volume_button_pressed() -> void:
+	show_and_hide(audio_settings, options_menu)
+
+func _on_video_button_pressed() -> void:
+	show_and_hide(video_settings, options_menu)
+
+func _on_back_option_button_pressed() -> void:
+	show_and_hide(options_menu, audio_settings)
+
+
+func _on_back_video_button_pressed() -> void:
+	show_and_hide(options_menu, video_settings)

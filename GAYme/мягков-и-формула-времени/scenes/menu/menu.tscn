@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b2wpybdh1ferk"]
+[gd_scene load_steps=25 format=3 uid="uid://b2wpybdh1ferk"]
 
 [ext_resource type="Script" uid="uid://bp7bfefpeu0jr" path="res://scripts/menu/menu.gd" id="1_037ec"]
 [ext_resource type="FontFile" uid="uid://d0jfh7mj4whuv" path="res://assets/alagard-12px-unicode.ttf" id="2_y1o0p"]
@@ -107,6 +107,13 @@ shadow_color = Color(0.169245, 0.169245, 0.169245, 0.6)
 shadow_size = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i6lef"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0a87"]
+bg_color = Color(0.294118, 0.294118, 0.294118, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_70i5f"]
 
@@ -281,6 +288,7 @@ text = "Видео"
 [node name="Diff_Button2" type="Button" parent="Options_menu/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 6
+theme_override_colors/font_disabled_color = Color(0.129412, 0.129412, 0.129412, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
@@ -288,9 +296,11 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_y1o0p")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_i6lef")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_t0a87")
 theme_override_styles/hover = SubResource("StyleBoxFlat_g3eks")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_v86rl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
+disabled = true
 text = "Сложность"
 
 [node name="Back_Button" type="Button" parent="Options_menu"]
@@ -454,9 +464,11 @@ text = "Вертикальная синхронизация"
 layout_mode = 2
 
 [node name="Fullscreen" type="CheckBox" parent="Video/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="Borderless" type="CheckBox" parent="Video/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="OptionButton" type="OptionButton" parent="Video/HBoxContainer/VBoxContainer"]
@@ -504,5 +516,10 @@ position = Vector2(575, 325)
 
 [connection signal="pressed" from="Menu/Options_Button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Menu/Exit_Button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Options_menu/VBoxContainer2/Volume_Button" to="." method="_on_volume_button_pressed"]
+[connection signal="pressed" from="Options_menu/VBoxContainer2/Video_Button" to="." method="_on_video_button_pressed"]
 [connection signal="pressed" from="Options_menu/Back_Button" to="." method="_on_back_button_pressed"]
 [connection signal="value_changed" from="Audio/HBoxContainer/MusicVolumeSlider/Master" to="." method="_on_master_value_changed"]
+[connection signal="pressed" from="Audio/Back_option_Button" to="." method="_on_back_option_button_pressed"]
+[connection signal="toggled" from="Video/HBoxContainer/VBoxContainer/Fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="pressed" from="Video/Back_video_Button" to="." method="_on_back_video_button_pressed"]
