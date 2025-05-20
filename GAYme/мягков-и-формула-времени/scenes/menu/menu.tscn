@@ -1,14 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://b2wpybdh1ferk"]
+[gd_scene load_steps=24 format=3 uid="uid://b2wpybdh1ferk"]
 
 [ext_resource type="Script" uid="uid://bp7bfefpeu0jr" path="res://scripts/menu/menu.gd" id="1_037ec"]
-[ext_resource type="AudioStream" uid="uid://c7uun3ipgkdqv" path="res://sounds/Untitled.mp3" id="2_f2fum"]
 [ext_resource type="FontFile" uid="uid://d0jfh7mj4whuv" path="res://assets/alagard-12px-unicode.ttf" id="2_y1o0p"]
-[ext_resource type="AudioStream" uid="uid://4uc0d81w3umk" path="res://sounds/menu_focus.wav" id="3_kaijy"]
 [ext_resource type="PackedScene" uid="uid://ch3jfe1ssj3ob" path="res://scenes/menu/back_ground.tscn" id="3_r8yej"]
 [ext_resource type="Script" uid="uid://bhog1fu2i8why" path="res://scripts/audio_stream_player_2d.gd" id="4_3y2rt"]
 [ext_resource type="Script" uid="uid://bb4hwgr0x84d2" path="res://scenes/menu/master.gd" id="4_t0a87"]
 [ext_resource type="Script" uid="uid://bsekc1jg1is1f" path="res://scenes/menu/music.gd" id="4_y1o0p"]
-[ext_resource type="AudioStream" uid="uid://c7hdjswp0catm" path="res://sounds/menu_select.wav" id="4_y4i35"]
 [ext_resource type="Script" uid="uid://cs2d1u6lr6dou" path="res://scenes/menu/sound_fx.gd" id="6_qo0fc"]
 [ext_resource type="PackedScene" uid="uid://ck4eya3cat7kb" path="res://scenes/PlayerSpawn.tscn" id="7_t0a87"]
 
@@ -116,9 +113,6 @@ shadow_size = 5
 [node name="Menu" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_037ec")
-music = ExtResource("2_f2fum")
-button_focus_audio = ExtResource("3_kaijy")
-button_press_audio = ExtResource("4_y4i35")
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 8
