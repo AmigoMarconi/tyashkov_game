@@ -11,6 +11,7 @@ func _ready() -> void:
 	await get_tree().create_timer(0.5).timeout
 	player_spawned = true
 
+
 func add_player_instance() -> void:
 	player = PLAYER.instantiate()
 	add_child(player)
@@ -27,3 +28,7 @@ func set_as_parent(_p : Node2D) -> void:
 
 func unparent_player(_p:Node2D) -> void:
 	_p.remove_child(player)
+
+func set_controls_enabled(enabled: bool):
+	set_process_input(enabled)
+	set_process_unhandled_input(enabled)

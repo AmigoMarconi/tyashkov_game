@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 const START_LEVEL : String = "res://scenes/game.tscn"
 
@@ -16,14 +16,18 @@ const START_LEVEL : String = "res://scenes/game.tscn"
 @onready var button_options: Button = $Menu/Options_Button
 @onready var button_exit: Button = $Menu/Exit_Button
 @onready var button_back: Button = $Options_menu/Back_Button
-#@onready var background: ParallaxBackground = $CanvasLayer/BackGround
+
 
 func _ready() -> void:
-
+	
 	get_tree().paused = true
+	Interaction_manager.enter_menu()
+
+	#print("Текущая камера: ", get_viewport().get_camera())
 	Interaction_manager.visible = false
 	PlayerManager.player.visible = false
 	PausePanel.process_mode = Node.PROCESS_MODE_DISABLED
+
 #	Проверка наличия обновлений 
 	if SaveManager.get_save_file() == null:
 		button_continue.disabled = true
@@ -59,6 +63,7 @@ func exit_title_screen() -> void:
 	PlayerManager.player.visible = true
 	PausePanel.process_mode = Node.PROCESS_MODE_ALWAYS
 	Interaction_manager.visible = true
+	Interaction_manager.exit_menu()
 	self.queue_free()
 
 # Обработчики кнопок меню

@@ -113,23 +113,14 @@ shadow_size = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_70i5f"]
 
-[node name="Menu" type="Control"]
+[node name="Menu" type="CanvasLayer"]
 process_mode = 3
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource("1_037ec")
 music = ExtResource("2_f2fum")
 button_focus_audio = ExtResource("3_kaijy")
 button_press_audio = ExtResource("4_y4i35")
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -140,7 +131,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_lti8b")
 
 [node name="Menu" type="VBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -152,6 +142,7 @@ offset_right = 250.0
 offset_bottom = 147.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 theme_override_constants/separation = 9
 
 [node name="Continue_Button" type="Button" parent="Menu"]
@@ -217,7 +208,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_mj5lg")
 text = "Выход"
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -242,7 +232,7 @@ vertical_alignment = 1
 
 [node name="Options_menu" type="Control" parent="."]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -311,10 +301,10 @@ text = "Сложность"
 
 [node name="Back_Button" type="Button" parent="Options_menu"]
 layout_mode = 2
-offset_left = -250.0
-offset_top = 78.0
-offset_right = 250.0
-offset_bottom = 120.0
+offset_left = 327.0
+offset_top = 411.0
+offset_right = 827.0
+offset_bottom = 453.0
 size_flags_vertical = 6
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -330,7 +320,7 @@ text = "Назад"
 
 [node name="Audio" type="Control" parent="."]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -404,10 +394,10 @@ bus_name = "Sound FX"
 
 [node name="Back_option_Button" type="Button" parent="Audio"]
 layout_mode = 0
-offset_left = -48.0
-offset_top = 78.0
-offset_right = 40.0
-offset_bottom = 120.0
+offset_left = 327.0
+offset_top = 429.0
+offset_right = 823.0
+offset_bottom = 471.0
 size_flags_vertical = 6
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -423,7 +413,7 @@ text = "Назад"
 
 [node name="Video" type="Control" parent="."]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -488,10 +478,10 @@ popup/item_2/id = 2
 
 [node name="Back_video_Button" type="Button" parent="Video"]
 layout_mode = 0
-offset_left = -48.0
-offset_top = 78.0
-offset_right = 40.0
-offset_bottom = 120.0
+offset_left = 351.0
+offset_top = 416.0
+offset_right = 801.0
+offset_bottom = 458.0
 size_flags_vertical = 6
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -506,31 +496,19 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_13sgg")
 text = "Назад"
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("7_t0a87")]
-position = Vector2(5, 38)
+position = Vector2(-1, 3)
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 script = ExtResource("4_3y2rt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(575, 325)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="BackGround" parent="." instance=ExtResource("3_r8yej")]
 
-[node name="BackGround" parent="CanvasLayer" instance=ExtResource("3_r8yej")]
-process_mode = 3
-
-[connection signal="pressed" from="Menu/Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Menu/Options_Button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Menu/Exit_Button" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="Options_menu/VBoxContainer2/Volume_Button" to="." method="_on_volume_button_pressed"]
-[connection signal="pressed" from="Options_menu/VBoxContainer2/Video_Button" to="." method="_on_video_button_pressed"]
 [connection signal="pressed" from="Options_menu/Back_Button" to="." method="_on_back_button_pressed"]
 [connection signal="value_changed" from="Audio/HBoxContainer/MusicVolumeSlider/Master" to="." method="_on_master_value_changed"]
-[connection signal="value_changed" from="Audio/HBoxContainer/MusicVolumeSlider/Music" to="." method="_on_music_value_changed"]
-[connection signal="value_changed" from="Audio/HBoxContainer/MusicVolumeSlider/SoundFX" to="." method="_on_sound_fx_value_changed"]
-[connection signal="pressed" from="Audio/Back_option_Button" to="." method="_on_back_option_button_pressed"]
-[connection signal="toggled" from="Video/HBoxContainer/VBoxContainer/Fullscreen" to="." method="_on_fullscreen_toggled"]
-[connection signal="toggled" from="Video/HBoxContainer/VBoxContainer/Borderless" to="." method="_on_borderless_toggled"]
-[connection signal="item_selected" from="Video/HBoxContainer/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
-[connection signal="pressed" from="Video/Back_video_Button" to="." method="_on_back_video_button_pressed"]

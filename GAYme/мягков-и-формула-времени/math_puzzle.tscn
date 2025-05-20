@@ -1,0 +1,96 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvl0k8ose3cpy"]
+
+[ext_resource type="Script" uid="uid://dgsn6cjtln17i" path="res://math_puzzle.gd" id="1_o23nc"]
+[ext_resource type="FontFile" uid="uid://d0jfh7mj4whuv" path="res://assets/alagard-12px-unicode.ttf" id="2_dseec"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mgapm"]
+paragraph_spacing = 1.0
+font_size = 41
+outline_size = 4
+outline_color = Color(0, 0.933333, 0.933333, 0.52549)
+shadow_size = 0
+
+[node name="MathPuzzle" type="CanvasLayer"]
+script = ExtResource("1_o23nc")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -326.5
+offset_top = -167.0
+offset_right = 326.5
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Question" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.0
+offset_right = 89.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_dseec")
+text = "Решите пример
+        8 * 9 = ?"
+label_settings = SubResource("LabelSettings_mgapm")
+
+[node name="InputLine" type="LineEdit" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.5
+offset_top = -30.0
+offset_right = 111.5
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_dseec")
+placeholder_text = "Введите ответ:"
+max_length = 10
+virtual_keyboard_type = 2
+
+[node name="Submit" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.302
+anchor_top = 0.76
+anchor_right = 0.302
+anchor_bottom = 0.76
+offset_left = -59.706
+offset_top = -25.84
+offset_right = 59.294
+offset_bottom = 26.16
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_dseec")
+text = "Проверить"
+
+[node name="Close" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.652
+anchor_top = 0.76
+anchor_right = 0.652
+anchor_bottom = 0.76
+offset_left = -61.756
+offset_top = -25.84
+offset_right = 62.244
+offset_bottom = 26.16
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_dseec")
+text = "Закрыть"
+
+[connection signal="pressed" from="Panel/Submit" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]

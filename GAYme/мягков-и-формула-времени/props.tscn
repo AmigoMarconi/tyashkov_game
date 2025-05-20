@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bw11jmnsm36uq"]
+[gd_scene load_steps=7 format=3 uid="uid://bw11jmnsm36uq"]
 
 [ext_resource type="Texture2D" uid="uid://bho0kqrf0jllp" path="res://tilemap/STANKIN/Inside_C.png" id="2_bb2yq"]
 [ext_resource type="Script" uid="uid://dkvuoi7v8cts4" path="res://props.gd" id="2_m23e0"]
 [ext_resource type="PackedScene" uid="uid://ja0s4g8mbvgq" path="res://interaction/interaction_area.tscn" id="3_bb2yq"]
+[ext_resource type="PackedScene" uid="uid://cvl0k8ose3cpy" path="res://math_puzzle.tscn" id="4_bb2yq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqnst"]
 atlas = ExtResource("2_bb2yq")
@@ -13,11 +14,14 @@ size = Vector2(108, 97)
 
 [node name="Props" type="StaticBody2D"]
 script = ExtResource("2_m23e0")
+math_puzzle_scene = ExtResource("4_bb2yq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_dqnst")
 
 [node name="Interaction_Area" parent="." instance=ExtResource("3_bb2yq")]
+interaction_type = "math_puzzle"
+puzzle_scene = ExtResource("4_bb2yq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
 position = Vector2(0, 0.5)

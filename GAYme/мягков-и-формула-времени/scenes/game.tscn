@@ -24,7 +24,7 @@ size = 1
 side = 3
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("8_0tnpc")]
-position = Vector2(507, 245)
+position = Vector2(473, 208)
 
 [node name="Карта" type="Node2D" parent="."]
 y_sort_enabled = true
